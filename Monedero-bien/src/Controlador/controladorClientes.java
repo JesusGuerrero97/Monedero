@@ -136,6 +136,8 @@ public controladorClientes(modeloClientes Modelo, Clientes Vista)
                 vista.txtDireccion.setText(String.valueOf(vista.clientes.getValueAt(fila, 2)));
                 vista.txtTelefono.setText(String.valueOf(vista.clientes.getValueAt(fila, 3)));
                 vista.txtCorreo.setText(String.valueOf(vista.clientes.getValueAt(fila, 4)));
+                vista.txtNumCuenta.setText(String.valueOf(vista.clientes.getValueAt(fila, 5)));
+                vista.txtPuntos.setText(String.valueOf(vista.clientes.getValueAt(fila, 6)));
             }
         }  //To change body of generated methods, choose Tools | Templates.
     }
