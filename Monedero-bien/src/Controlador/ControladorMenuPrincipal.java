@@ -52,7 +52,7 @@ public class ControladorMenuPrincipal implements ActionListener {
             controladorPremios.iniciarVista();
             menu.dispose();*/
         }
-        if (this.menu.btnPremios == e.getSource()) {
+        if (this.menu.btnEmpleado == e.getSource()) {
             
         }
         if(this.menu.btnCliente == e.getSource())
