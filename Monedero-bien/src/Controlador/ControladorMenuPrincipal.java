@@ -53,10 +53,10 @@ public class ControladorMenuPrincipal implements ActionListener {
             menu.dispose();
         }
         if (this.menu.btnEmpleado == e.getSource()) {
-            modeloEmpleado modeloEmpleado = new modeloEmpleado();
-            Empleados vistaEmpleado = new Empleados();
-            controladorEmpleado controladorEmpleado = new controladorEmpleado(modeloEmpleado,vistaEmpleado); 
-            controladorEmpleado.iniciarVista();
+            modeloEmpleado modelo = new modeloEmpleado();
+            Empleados vista = new Empleados();
+            controladorEmpleado control = new controladorEmpleado(modelo,vista); 
+            control.iniciarVista();
             menu.dispose();
         }
         if(this.menu.btnCliente == e.getSource())
