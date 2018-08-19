@@ -43,7 +43,8 @@ public class Empleados extends javax.swing.JFrame {
         btnEditar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        clientes = new javax.swing.JTable();
+        empleado = new javax.swing.JTable();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,7 +107,7 @@ public class Empleados extends javax.swing.JFrame {
 
         jLabel1.setText("EMPLEADOS");
 
-        clientes.setModel(new javax.swing.table.DefaultTableModel(
+        empleado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -114,13 +115,15 @@ public class Empleados extends javax.swing.JFrame {
                 "ID", "Nombre", "Dirección", "Teléfono", "Id_sucursal"
             }
         ));
-        clientes.setSurrendersFocusOnKeystroke(true);
-        clientes.addMouseListener(new java.awt.event.MouseAdapter() {
+        empleado.setSurrendersFocusOnKeystroke(true);
+        empleado.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                clientesMouseClicked(evt);
+                empleadoMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(clientes);
+        jScrollPane1.setViewportView(empleado);
+
+        btnRegresar.setText("REGRESAR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -161,20 +164,26 @@ public class Empleados extends javax.swing.JFrame {
                 .addGap(157, 157, 157))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 185, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(467, 467, 467))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(113, 113, 113))))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(113, 113, 113))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(btnRegresar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(467, 467, 467))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel1)
-                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(btnRegresar)))
+                .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,9 +239,9 @@ public class Empleados extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
 
-    private void clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientesMouseClicked
+    private void empleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empleadoMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_clientesMouseClicked
+    }//GEN-LAST:event_empleadoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -275,7 +284,8 @@ public class Empleados extends javax.swing.JFrame {
     public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnEditar;
     public javax.swing.JButton btnEliminar;
-    public javax.swing.JTable clientes;
+    public javax.swing.JButton btnRegresar;
+    public javax.swing.JTable empleado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
