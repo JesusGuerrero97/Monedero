@@ -46,11 +46,26 @@ public class ControladorMenuPrincipal implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(this.menu.btnPremios == e.getSource())
         {   
-            this.modelo. InventarioMod = new ModeloInventario();
-            VistaInventario InventarioVis = new VistaInventario();
-            ControladorInventario InventarioCon = new ControladorInventario(InventarioMod,InventarioVis); 
-            InventarioCon.iniciarVista();
-            menu.dispose();
+            /*ModeloPremios modeloPremios = new ModeloPremios();
+            Premios vistaPremios = new Premios();
+            ControladorPremios controladorPremios = new ControladorPremios(InventarioMod,InventarioVis); 
+            controladorPremios.iniciarVista();
+            menu.dispose();*/
+        }
+        if (this.menu.btnPremios == e.getSource()) {
+            
+        }
+        if(this.menu.btnCliente == e.getSource())
+        {   
+            
+        }
+        if(this.menu.btnCompras == e.getSource())
+        {   
+            
+        }
+        if(this.menu.btnMovimientos == e.getSource())
+        {   
+            
         }
     }
     
