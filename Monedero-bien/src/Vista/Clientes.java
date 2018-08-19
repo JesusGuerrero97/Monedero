@@ -43,11 +43,13 @@ public class Clientes extends javax.swing.JFrame {
         txtPuntos = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         clientes = new javax.swing.JTable();
-        btnEliminar = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         btnAgregar1 = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnEliminar = new javax.swing.JButton();
+        btnEliminar2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -155,8 +157,8 @@ public class Clientes extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 720, 210));
 
-        btnEliminar.setText("ELIMINAR");
-        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 180, -1, -1));
+        btnRegresar.setText("REGRESAR");
+        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
 
         btnAgregar1.setText("AGREGAR");
         getContentPane().add(btnAgregar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 100, -1, -1));
@@ -169,6 +171,12 @@ public class Clientes extends javax.swing.JFrame {
 
         jLabel1.setText("CLIENTES");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, -1, -1));
+
+        btnEliminar.setText("ELIMINAR");
+        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 180, -1, -1));
+
+        btnEliminar2.setText("ELIMINAR");
+        getContentPane().add(btnEliminar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 180, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -242,6 +250,8 @@ public class Clientes extends javax.swing.JFrame {
     public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnEditar;
     public javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnEliminar2;
+    public javax.swing.JButton btnRegresar;
     public javax.swing.JTable clientes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
