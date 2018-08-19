@@ -31,9 +31,9 @@ public class controladorEmpleado implements ActionListener, MouseListener{
     private Empleados vista;
    
     
-    public controladorEmpleado(modeloEmpleado Modelo, Empleados Vista)
-{       this.modelo = Modelo;
-        this.vista = Vista;
+    public controladorEmpleado(modeloEmpleado modelo, Empleados vista)
+{       this.modelo = modelo;
+        this.vista = vista;
         this.vista.empleado.addMouseListener(this);
         this.vista.btnAgregar1.addActionListener(this); //Aqui
         this.vista.btnEditar.addActionListener(this);//Aqui

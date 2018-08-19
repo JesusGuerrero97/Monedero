@@ -23,7 +23,7 @@ import Vista.MenuPrincipal;
 public class controladorClientes implements ActionListener, MouseListener {
     private modeloClientes modelo;
     private Clientes vista;
-    private int libros;
+   
     
     public void transparenciaButton(){
         vista.btnAgregar1.setOpaque(false);
@@ -33,9 +33,9 @@ public class controladorClientes implements ActionListener, MouseListener {
         vista.btnRegresar.setContentAreaFilled(false);
         vista.btnRegresar.setBorderPainted(false);
     }
-public controladorClientes(modeloClientes Modelo, Clientes Vista)
-{       this.modelo = Modelo;
-        this.vista = Vista;
+public controladorClientes(modeloClientes modelo, Clientes vista)
+{       this.modelo = modelo;
+        this.vista = vista;
         this.vista.clientes.addMouseListener(this);
         vista.btnAgregar1.addActionListener(this); //Aqui
         vista.btnEditar.addActionListener(this);//Aqui
