@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controlador;
+package Modelo;
 
 /**
  *
- * @author Jesus
+ * @author 8a
  */
-public class NewClass {
+public class ModeloPremios {
     
 }

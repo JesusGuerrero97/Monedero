@@ -28,9 +28,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        panelbotones = new javax.swing.JPanel();
         btnMovimientos = new javax.swing.JButton();
-        btnCliente1 = new javax.swing.JButton();
+        btnCliente = new javax.swing.JButton();
         btnEmpleado = new javax.swing.JButton();
         btnPremios = new javax.swing.JButton();
         btnCompras = new javax.swing.JButton();
@@ -41,24 +41,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel1.setText("Menú principal");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 94, -1, -1));
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelbotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnMovimientos.setText("MOVIMIENTOS/REPORTES");
-        jPanel1.add(btnMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 190, -1, -1));
+        panelbotones.add(btnMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 190, -1, -1));
 
-        btnCliente1.setText("CLIENTE");
-        jPanel1.add(btnCliente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
+        btnCliente.setText("CLIENTE");
+        panelbotones.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
 
         btnEmpleado.setText("EMPLEADO");
-        jPanel1.add(btnEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, -1, -1));
+        panelbotones.add(btnEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, -1, -1));
 
         btnPremios.setText("PREMIOS");
-        jPanel1.add(btnPremios, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, -1, -1));
+        panelbotones.add(btnPremios, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, -1, -1));
 
         btnCompras.setText("COMPRAS");
-        jPanel1.add(btnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, -1, -1));
+        panelbotones.add(btnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 155, 1018, 395));
+        getContentPane().add(panelbotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 1018, 395));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -100,12 +100,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnCliente1;
+    public javax.swing.JButton btnCliente;
     public javax.swing.JButton btnCompras;
     public javax.swing.JButton btnEmpleado;
     public javax.swing.JButton btnMovimientos;
     public javax.swing.JButton btnPremios;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel panelbotones;
     // End of variables declaration//GEN-END:variables
 }
