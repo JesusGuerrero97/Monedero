@@ -36,6 +36,7 @@ public class ControladorLogin implements ActionListener, MouseListener{
 
     public void verificarInicio()
     {
+        
         int resultado = 0;
         if(!Log.txtUsuario.getText().equals("") && !String.valueOf(Log.jPassword.getPassword()).equals(""))
         {   
