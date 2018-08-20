@@ -5,6 +5,9 @@
  */
 package Vista;
 
+import Modelo.ModeloCompras.EmpleadoComboBox;
+import Modelo.ModeloCompras.SucursalComboBox;
+
 /**
  *
  * @author 8a
@@ -38,7 +41,7 @@ public class Compras extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        clientes = new javax.swing.JTable();
+        compras = new javax.swing.JTable();
         btnCancelar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
@@ -93,7 +96,7 @@ public class Compras extends javax.swing.JFrame {
 
         jLabel1.setText("COMPRA");
 
-        clientes.setModel(new javax.swing.table.DefaultTableModel(
+        compras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -101,13 +104,13 @@ public class Compras extends javax.swing.JFrame {
                 "Id_compra", "Num cuenta", "Id_sucursal", "Id_empleado", "fecha", "Total"
             }
         ));
-        clientes.setSurrendersFocusOnKeystroke(true);
-        clientes.addMouseListener(new java.awt.event.MouseAdapter() {
+        compras.setSurrendersFocusOnKeystroke(true);
+        compras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                clientesMouseClicked(evt);
+                comprasMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(clientes);
+        jScrollPane1.setViewportView(compras);
 
         btnCancelar.setText("CANCELAR");
 
@@ -188,13 +191,14 @@ public class Compras extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(cmbSucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(cmbEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5)
+                        .addComponent(cmbEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel7)
+                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel8)))
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAgregar1)
@@ -222,9 +226,9 @@ public class Compras extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTotalActionPerformed
 
-    private void clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientesMouseClicked
+    private void comprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comprasMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_clientesMouseClicked
+    }//GEN-LAST:event_comprasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -267,9 +271,9 @@ public class Compras extends javax.swing.JFrame {
     public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnEditar;
     public javax.swing.JButton btnEliminar;
-    public javax.swing.JTable clientes;
-    public javax.swing.JComboBox<String> cmbEmpleado;
-    public javax.swing.JComboBox<String> cmbSucursal;
+    public javax.swing.JComboBox<EmpleadoComboBox> cmbEmpleado;
+    public javax.swing.JComboBox<SucursalComboBox> cmbSucursal;
+    public javax.swing.JTable compras;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
