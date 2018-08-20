@@ -37,8 +37,7 @@ public class ControladorMenuPrincipal implements ActionListener {
         //AdmMenu.nombreEmpleado.setText("ID: "+this.idEmp);
         this.menu.btnCliente.addActionListener(this);
         this.menu.btnEmpleado.addActionListener(this);
-        this.menu.btnAbono.addActionListener(this);
-        this.menu.btnCargo.addActionListener(this);
+       // this.menu..addActionListener(this);
         this.menu.btnPremios.addActionListener(this);
         this.menu.btnCompras.addActionListener(this);
     }
@@ -70,7 +69,12 @@ public class ControladorMenuPrincipal implements ActionListener {
         }
         else if(this.menu.btnCompras == e.getSource())
         {   
+            ModeloCompras mod = new ModeloCompras();
+            Compras vis = new Compras();
+            ControladorCompras comp = new ControladorCompras(mod,vis);
+            comp.iniciarVista();
             
+            menu.dispose();
         }
         else if(this.menu.btnAbono == e.getSource())
         {   
