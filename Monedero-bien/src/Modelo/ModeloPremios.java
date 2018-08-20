@@ -98,7 +98,7 @@ public class ModeloPremios {
             //Para Ejecutar la consulta
             //Statement s = con.createStatement();
             //JOptionPane.showMessageDialog(null, vConFecha+"---"+vConHora+"---"+vConTipo+"---"+vConNombre+"---"+vConPeso);
-            String query  = "INSERT INTO sucursal( Id_premio, Descripcion, Stock, Puntos) values (?,?,?,?)";
+            String query  = "INSERT INTO premios(Id_premio, Descripcion, Stock, Puntos) values (?,?,?,?)";
             PreparedStatement preparedStatement = con.prepareStatement(query);
             preparedStatement.setInt(1,vIdPrem);
             preparedStatement.setString(2,vDes);

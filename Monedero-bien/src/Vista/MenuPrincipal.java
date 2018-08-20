@@ -29,11 +29,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         panelbotones = new javax.swing.JPanel();
-        btnMovimientos = new javax.swing.JButton();
         btnCliente = new javax.swing.JButton();
         btnEmpleado = new javax.swing.JButton();
         btnPremios = new javax.swing.JButton();
         btnCompras = new javax.swing.JButton();
+        btnAbono = new javax.swing.JButton();
+        btnCargo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -42,9 +43,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 94, -1, -1));
 
         panelbotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnMovimientos.setText("MOVIMIENTOS/REPORTES");
-        panelbotones.add(btnMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 190, -1, -1));
 
         btnCliente.setText("CLIENTE");
         panelbotones.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
@@ -57,6 +55,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         btnCompras.setText("COMPRAS");
         panelbotones.add(btnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, -1, -1));
+
+        btnAbono.setText("ABONO");
+        panelbotones.add(btnAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 190, -1, -1));
+
+        btnCargo.setText("CARGO");
+        panelbotones.add(btnCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 190, -1, -1));
 
         getContentPane().add(panelbotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 1018, 395));
 
@@ -100,10 +104,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnAbono;
+    public javax.swing.JButton btnCargo;
     public javax.swing.JButton btnCliente;
     public javax.swing.JButton btnCompras;
     public javax.swing.JButton btnEmpleado;
-    public javax.swing.JButton btnMovimientos;
     public javax.swing.JButton btnPremios;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JPanel panelbotones;

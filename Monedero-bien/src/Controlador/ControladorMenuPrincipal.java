@@ -67,7 +67,11 @@ public class ControladorMenuPrincipal implements ActionListener {
         {   
             
         }
-        else if(this.menu.btnMovimientos == e.getSource())
+        else if(this.menu.btnAbono == e.getSource())
+        {   
+            
+        }
+        else if(this.menu.btnCargo == e.getSource())
         {   
             
         }
