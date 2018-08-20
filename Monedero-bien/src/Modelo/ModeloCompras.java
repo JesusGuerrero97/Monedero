@@ -5,12 +5,15 @@
  */
 package Modelo;
 
+import Controlador.ControladorGenerarCodigo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -23,7 +26,39 @@ public class ModeloCompras {
     
     
     private Conexion conexion = new Conexion();
-    
+
+    public boolean agregarCliente(int Id_compra, int total, int numeroCuenta, int id_sucursal,String fecha, int id_emp){
+        try
+        {
+            Connection con = conexion.abrirConexion();
+            Statement s = con.createStatement();
+            //System.out.println("insert into cliente(Id_cliente, Nombre, Direccion, Telefono, Correo, Num_cuenta, Puntos) values("+id_cliente+",'"+nombre+"', '"+direccion+"', '"+telefono+"', '"+correo+"', "+num_cuenta+", " +puntos+");");
+            s.executeUpdate("insert into compra(Id_compra, Total, Num_cuenta, Id_sucursal, Fecha, id_emp) values("+Id_compra+","+total+", "+numeroCuenta+", "+id_sucursal+", '"+fecha+"', "+id_emp+");");
+            //INSERT INTO `biblioteca`.`libro` (`id_libro`, `nombre`, `autor`, `editorial`, `fecha_pub`, `numpag`, `edicion`, `genero`, `id_sucursal`, `existencia`) VALUES ('30', 'porpoe', 'dngf', 'dskygfs', '1998-02-22', '234', 'efds', 'edff', '3', '15');
+            
+            conexion.cerrarConexion(con);
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
+        
+    }
+    public boolean agregarTicket(int Id_ticket,String Folio, double puntos, int id_compra,int status){
+        try
+        {
+            Connection con = conexion.abrirConexion();
+            Statement s = con.createStatement();
+            //System.out.println("insert into cliente(Id_cliente, Nombre, Direccion, Telefono, Correo, Num_cuenta, Puntos) values("+id_cliente+",'"+nombre+"', '"+direccion+"', '"+telefono+"', '"+correo+"', "+num_cuenta+", " +puntos+");");
+            s.executeUpdate("insert into ticket(Id_ticket, Folio, Puntos, Id_compra, status) values("+Id_ticket+",'"+Folio+"', "+puntos+", "+id_compra+", "+status+");");
+            //INSERT INTO `biblioteca`.`libro` (`id_libro`, `nombre`, `autor`, `editorial`, `fecha_pub`, `numpag`, `edicion`, `genero`, `id_sucursal`, `existencia`) VALUES ('30', 'porpoe', 'dngf', 'dskygfs', '1998-02-22', '234', 'efds', 'edff', '3', '15');
+            
+            conexion.cerrarConexion(con);
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
+        
+    }
     public DefaultTableModel cargarDatos(){
         try
        {
@@ -34,9 +69,9 @@ public class ModeloCompras {
          try
         {
           ResultSet rs = s.executeQuery("SELECT compra.`Id_compra`,compra.`Total`,compra.`Num_cuenta`, cliente.`Nombre` AS Cliente, sucursal.`Nombre` AS Sucursal,compra.`Fecha`,empleado.`Nombre`\n" +
-          "FROM compra INNER JOIN cliente ON compra.`Num_cuenta`= cliente.`Num_cuenta`\n" +
-          "INNER JOIN sucursal ON compra.`Id_sucursal` = sucursal.`Id_sucursal`\n" +
-          "INNER JOIN empleado ON compra.`id_emp` = empleado.`Id_empleado`;");
+"FROM compra INNER JOIN cliente ON compra.`Num_cuenta`= cliente.`Num_cuenta`\n" +
+"INNER JOIN sucursal ON compra.`Id_sucursal` = sucursal.`Id_sucursal`\n" +
+"INNER JOIN empleado ON compra.`id_emp` = empleado.`Id_empleado`;");
           modelo = new DefaultTableModel();
           ResultSetMetaData rsMd = rs.getMetaData();
           int cantidadColumnas = rsMd.getColumnCount();
@@ -63,80 +98,16 @@ public class ModeloCompras {
        return null;
     }
     
-    public void llenarComboClientes(JComboBox<ClienteComboBox> comboCliente)
-    {
-        try
-        {
-         Connection con = conexion.abrirConexion();
-         Statement s = con.createStatement();
-         ResultSet rs=s.executeQuery("SELECT id_cliente,Nombre FROM cliente ORDER BY Nombre");
-         while(rs.next())
-         {
-             comboCliente.addItem(new ClienteComboBox(rs.getInt("id_cliente"),rs.getString("Nombre")));
-         }
-         conexion.cerrarConexion(con);
-        }
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }
-
-    public class ClienteComboBox
-    {
-        private int id_cliente;
-        private String nombre_cli;
-
-        public ClienteComboBox(int id_cliente, String nombre_cli) {
-            this.id_cliente = id_cliente;
-            this.nombre_cli = nombre_cli;
-        }
-
-        /**
-         * @return the idPaciente
-         */
-        public int getId_cliente() {
-            return id_cliente;
-        }
-
-        /**
-         * @param idPaciente the idPaciente to set
-         */
-        public void setId_cliente(int idPaciente) {
-            this.id_cliente = idPaciente;
-        }
-
-        /**
-         * @return the nombrePaciente
-         */
-        public String getNombre_cli() {
-            return nombre_cli;
-        }
-
-        /**
-         * @param nombrePaciente the nombrePaciente to set
-         */
-        public void setNombre_cli(String nombrePaciente) {
-            this.nombre_cli = nombre_cli;
-        }
-        
-        @Override
-        public String toString()
-        {
-            return nombre_cli;
-        }
-    }
-    
     public void llenarComboSucursal(JComboBox<SucursalComboBox> comboSucursal)
     {
         try
         {
          Connection con = conexion.abrirConexion();
          Statement s = con.createStatement();
-         ResultSet rs=s.executeQuery("SELECT id_sucursal,Nombre FROM sucursal ORDER BY Nombre");
+         ResultSet rs=s.executeQuery("SELECT Id_sucursal,Nombre FROM sucursal ORDER BY Nombre");
          while(rs.next())
          {
-             comboSucursal.addItem(new SucursalComboBox(rs.getInt("id_sucursal"),rs.getString("Nombre")));
+             comboSucursal.addItem(new SucursalComboBox(rs.getInt("Id_sucursal"),rs.getString("Nombre")));
          }
          conexion.cerrarConexion(con);
         }
@@ -235,5 +206,50 @@ public class ModeloCompras {
         {
             return nombre_emp;
         }
+    }
+    public String cargarCodigo()
+    {
+        String codigo="";
+        try {
+            Connection con = conexion.abrirConexion();
+            Statement s = con.createStatement();
+            int j;
+            String num="";
+            String c="";
+            String SQL="SELECT MAX(ticket.`Folio`) FROM ticket;";
+            try{
+                Statement st = con.createStatement();
+                ResultSet rs = st.executeQuery(SQL);
+                if(rs.next())
+                {
+                    c=rs.getString(1);
+                    System.out.println(c);
+                }
+                if(c == null)
+                {
+                  codigo="CD0001";
+                  return codigo;
+                }
+                else{
+                    char r1=c.charAt(2);
+                    char r2=c.charAt(3);
+                    char r3=c.charAt(4);
+                    char r4=c.charAt(5);
+                    String r="";
+                    r="" +r1+r2+r3+r4;
+                    System.out.println(r);
+                    j=Integer.parseInt(r);
+                    
+                    ControladorGenerarCodigo genCod = new ControladorGenerarCodigo();
+                    genCod.ControladorGenerarCodigo(j);
+                    codigo= genCod.serie();
+                }
+            }catch(Exception e){}                
+           conexion.cerrarConexion(con);
+        } catch (SQLException ex) { 
+            Logger.getLogger(ModeloCompras.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
+         return codigo;
     }
 }

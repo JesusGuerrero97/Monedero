@@ -12,7 +12,10 @@ import java.awt.event.MouseListener;
 
 import Modelo.ModeloCompras;
 import Vista.Compras;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Jesus
@@ -28,11 +31,8 @@ public class ControladorCompras implements ActionListener, MouseListener {
     }
     
     public void iniciarVista(){
-        vista.pack();
         this.vista.btnAgregar1.addActionListener(this);
         this.vista.btnCancelar.addActionListener(this);
-        this.vista.btnEditar.addActionListener(this);
-        this.vista.btnEliminar.addActionListener(this);
         modelo.llenarComboEmpleado(vista.cmbEmpleado);
         modelo.llenarComboSucursal(vista.cmbSucursal);
         
@@ -49,7 +49,23 @@ public class ControladorCompras implements ActionListener, MouseListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        int id_empleado = vista.cmbEmpleado.getItemAt(vista.cmbEmpleado.getSelectedIndex()).getId_emp();
+        int id_sucursal = vista.cmbSucursal.getItemAt(vista.cmbSucursal.getSelectedIndex()).getId_sucursal();
+        String fecha= df.format(vista.JDate.getDate());
+        if(vista.btnAgregar1 == e.getSource())
+        {
+            if(modelo.agregarCliente(Integer.parseInt(vista.txtIdCompra.getText()),Integer.parseInt(vista.txtTotal.getText()) , Integer.parseInt(vista.txtNumeroCuenta.getText()), id_sucursal, fecha, id_empleado))
+            {
+               String folio="CD"+modelo.cargarCodigo();
+                JOptionPane.showMessageDialog(vista, "Registro insertado exitosamente");
+                vista.compras.setModel(modelo.cargarDatos());
+                if(modelo.agregarTicket(Integer.parseInt(vista.txtIdCompra.getText()),folio,Integer.parseInt(vista.txtTotal.getText())*.15, id_sucursal,1))
+                {JOptionPane.showMessageDialog(vista, "Ya la hiciste prro");}
+                else{JOptionPane.showMessageDialog(vista, "ah valiste vrg");}
+            }
+            else { JOptionPane.showMessageDialog(vista, "El registro no pudo ser completado con exito"); }
+        }
     }
 
     @Override
