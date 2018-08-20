@@ -37,7 +37,8 @@ public class ControladorMenuPrincipal implements ActionListener {
         //AdmMenu.nombreEmpleado.setText("ID: "+this.idEmp);
         this.menu.btnCliente.addActionListener(this);
         this.menu.btnEmpleado.addActionListener(this);
-        this.menu.btnMovimientos.addActionListener(this);
+        this.menu.btnAbono.addActionListener(this);
+        this.menu.btnCargo.addActionListener(this);
         this.menu.btnPremios.addActionListener(this);
         this.menu.btnCompras.addActionListener(this);
     }
