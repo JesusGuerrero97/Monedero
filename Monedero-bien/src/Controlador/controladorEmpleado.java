@@ -134,6 +134,9 @@ public class controladorEmpleado implements ActionListener, MouseListener{
                 vista.txtNombre.setText(String.valueOf(vista.empleado.getValueAt(fila, 1)));
                 vista.txtDireccion.setText(String.valueOf(vista.empleado.getValueAt(fila, 2)));
                 vista.txtTelefono.setText(String.valueOf(vista.empleado.getValueAt(fila, 3)));
+                vista.txtIdSucursal.setText(String.valueOf(vista.empleado.getValueAt(fila, 4)));
+                
+                
             }
          }
     }

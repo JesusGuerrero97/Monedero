@@ -9,12 +9,12 @@ package Vista;
  *
  * @author 8a
  */
-public class MovimientosReporte extends javax.swing.JFrame {
+public class Cargo extends javax.swing.JFrame {
 
     /**
-     * Creates new form MovimientosReporte
+     * Creates new form Cargo
      */
-    public MovimientosReporte() {
+    public Cargo() {
         initComponents();
     }
 
@@ -27,8 +27,32 @@ public class MovimientosReporte extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        id_cargo = new javax.swing.JLabel();
+        id_premio = new javax.swing.JLabel();
+        num = new javax.swing.JLabel();
+        txtIdCargo = new javax.swing.JTextField();
+        txtIdPremio = new javax.swing.JTextField();
+        txtNumCuenta = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        id_cargo.setText("Id_cargo");
+        jPanel1.add(id_cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 59, -1, -1));
+
+        id_premio.setText("id_premio");
+        jPanel1.add(id_premio, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 97, -1, -1));
+
+        num.setText("Número de cuenta");
+        jPanel1.add(num, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 135, -1, -1));
+        jPanel1.add(txtIdCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 56, 198, -1));
+        jPanel1.add(txtIdPremio, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 94, 198, -1));
+        jPanel1.add(txtNumCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 132, 198, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 111, 1040, 190));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -50,25 +74,31 @@ public class MovimientosReporte extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MovimientosReporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cargo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MovimientosReporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cargo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MovimientosReporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cargo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MovimientosReporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cargo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MovimientosReporte().setVisible(true);
+                new Cargo().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel id_cargo;
+    public javax.swing.JLabel id_premio;
+    private javax.swing.JPanel jPanel1;
+    public javax.swing.JLabel num;
+    public javax.swing.JTextField txtIdCargo;
+    public javax.swing.JTextField txtIdPremio;
+    public javax.swing.JTextField txtNumCuenta;
     // End of variables declaration//GEN-END:variables
 }
