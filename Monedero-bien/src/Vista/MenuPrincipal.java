@@ -62,7 +62,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnCargo.setText("CARGO");
         panelbotones.add(btnCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 190, -1, -1));
 
-        getContentPane().add(panelbotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 1018, 395));
+        getContentPane().add(panelbotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 1018, 395));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
