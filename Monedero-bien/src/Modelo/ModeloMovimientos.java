@@ -16,7 +16,8 @@ import javax.swing.JOptionPane;
  * @author Jesus
  */
 public class ModeloMovimientos {
-     private Conexion conexion = new Conexion();
+     
+    private Conexion conexion = new Conexion();
 
      
      public void llenarComboClientes(JComboBox<ClienteComboBox> comboCliente)

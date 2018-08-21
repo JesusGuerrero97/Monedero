@@ -5,9 +5,11 @@
  */
 package Vista;
 
+import Modelo.modeloAbono.TicketComboBox;
+
 /**
  *
- * @author 8a
+ * @author Jesus
  */
 public class Abono extends javax.swing.JFrame {
 
@@ -27,81 +29,102 @@ public class Abono extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        id_cargo = new javax.swing.JLabel();
-        id_premio = new javax.swing.JLabel();
-        num = new javax.swing.JLabel();
-        txtIdAbono = new javax.swing.JTextField();
-        txtPuntos = new javax.swing.JTextField();
-        txtIdTicket = new javax.swing.JTextField();
-        num1 = new javax.swing.JLabel();
-        txtNumCuenta = new javax.swing.JTextField();
-        num2 = new javax.swing.JLabel();
-        btnCanje = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txtId_abono = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        cmbFolio = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        txtNum_Cuenta = new javax.swing.JTextField();
+        jDate = new com.toedter.calendar.JDateChooser();
+        jLabel4 = new javax.swing.JLabel();
+        btnAceptar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1.setText("ID");
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        id_cargo.setText("Id_abono");
-        jPanel1.add(id_cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 59, -1, -1));
-
-        id_premio.setText("Puntos");
-        jPanel1.add(id_premio, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 97, -1, -1));
-
-        num.setText("Id_ticket:");
-        jPanel1.add(num, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, -1, -1));
-        jPanel1.add(txtIdAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 56, 198, -1));
-        jPanel1.add(txtPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 94, 198, -1));
-        jPanel1.add(txtIdTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 132, 198, -1));
-
-        num1.setText("Fecha");
-        jPanel1.add(num1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, -1, -1));
-        jPanel1.add(txtNumCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 198, -1));
-
-        num2.setText("Número de cuenta:");
-        jPanel1.add(num2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, 20));
-
-        btnCanje.setText("Canjear");
-        btnCanje.addActionListener(new java.awt.event.ActionListener() {
+        txtId_abono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCanjeActionPerformed(evt);
+                txtId_abonoActionPerformed(evt);
             }
         });
+
+        jLabel2.setText("Folio Ticket:");
+
+        jLabel3.setText("Numero de Cuenta:");
+
+        jLabel4.setText("Fecha");
+
+        btnAceptar.setText("Agregar");
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
+
+        btnCancelar.setText("Cancelar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(352, 352, 352)
-                .addComponent(btnCanje)
-                .addContainerGap(637, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1040, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jDate, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                            .addComponent(txtId_abono)
+                            .addComponent(cmbFolio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtNum_Cuenta)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(btnAceptar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addComponent(btnCancelar)))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(459, Short.MAX_VALUE)
-                .addComponent(btnCanje)
-                .addGap(68, 68, 68))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(180, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(114, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtId_abono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbFolio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNum_Cuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAceptar)
+                    .addComponent(btnCancelar))
+                .addGap(23, 23, 23))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCanjeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCanjeActionPerformed
+    private void txtId_abonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtId_abonoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnCanjeActionPerformed
+    }//GEN-LAST:event_txtId_abonoActionPerformed
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,16 +162,15 @@ public class Abono extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnCanje;
-    public javax.swing.JLabel id_cargo;
-    public javax.swing.JLabel id_premio;
-    private javax.swing.JPanel jPanel1;
-    public javax.swing.JLabel num;
-    public javax.swing.JLabel num1;
-    public javax.swing.JLabel num2;
-    public javax.swing.JTextField txtIdAbono;
-    public javax.swing.JTextField txtIdTicket;
-    public javax.swing.JTextField txtNumCuenta;
-    public javax.swing.JTextField txtPuntos;
+    public javax.swing.JButton btnAceptar;
+    public javax.swing.JButton btnCancelar;
+    public javax.swing.JComboBox<TicketComboBox> cmbFolio;
+    public com.toedter.calendar.JDateChooser jDate;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    public javax.swing.JTextField txtId_abono;
+    public javax.swing.JTextField txtNum_Cuenta;
     // End of variables declaration//GEN-END:variables
 }

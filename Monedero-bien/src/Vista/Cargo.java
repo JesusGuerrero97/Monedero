@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import Modelo.ModeloCarga.PremiosComboBox;
+
 /**
  *
  * @author 8a
@@ -32,29 +34,49 @@ public class Cargo extends javax.swing.JFrame {
         id_premio = new javax.swing.JLabel();
         num = new javax.swing.JLabel();
         cmbPremio = new javax.swing.JComboBox<>();
-        cmbNum_Cuen = new javax.swing.JComboBox<>();
+        btnAceptar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        txtNum_cue = new javax.swing.JTextField();
+        JDate = new com.toedter.calendar.JDateChooser();
+        num1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        id_cargo.setText("Id_cargo");
-        getContentPane().add(id_cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, -1, -1));
-        getContentPane().add(txtIdCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 80, -1));
+        id_cargo.setText("ID_CARGO");
+        getContentPane().add(id_cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+        getContentPane().add(txtIdCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 80, -1));
 
-        id_premio.setText("Premio");
+        id_premio.setText("Premio:");
         getContentPane().add(id_premio, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
-        num.setText("Número de cuenta");
-        getContentPane().add(num, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+        num.setText("FECHA:");
+        getContentPane().add(num, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, 20));
 
-        cmbPremio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(cmbPremio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, -1, -1));
+        getContentPane().add(cmbPremio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 140, -1));
 
-        cmbNum_Cuen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(cmbNum_Cuen, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
+        btnAceptar.setText("Aceptar");
+        getContentPane().add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
+
+        btnCancelar.setText("Cancelar");
+        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, -1, -1));
+
+        txtNum_cue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNum_cueActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtNum_cue, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 130, -1));
+        getContentPane().add(JDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 130, 20));
+
+        num1.setText("Número de cuenta");
+        getContentPane().add(num1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtNum_cueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNum_cueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNum_cueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,11 +114,15 @@ public class Cargo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JComboBox<String> cmbNum_Cuen;
-    public javax.swing.JComboBox<String> cmbPremio;
+    public com.toedter.calendar.JDateChooser JDate;
+    public javax.swing.JButton btnAceptar;
+    public javax.swing.JButton btnCancelar;
+    public javax.swing.JComboBox<PremiosComboBox> cmbPremio;
     public javax.swing.JLabel id_cargo;
     public javax.swing.JLabel id_premio;
     public javax.swing.JLabel num;
+    public javax.swing.JLabel num1;
     public javax.swing.JTextField txtIdCargo;
+    public javax.swing.JTextField txtNum_cue;
     // End of variables declaration//GEN-END:variables
 }

@@ -62,7 +62,10 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
 
     @Override
     public void actionPerformed(ActionEvent evento) {
-            if(vista.btnAgregar == evento.getSource()){
+     try
+     {
+        if(vista.btnAgregar == evento.getSource())
+        {
             modelo.agregarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(), Integer.parseInt(vista.txtStock.getText()), Integer.parseInt(vista.txtStock.getText()));
                 
             JOptionPane.showMessageDialog(vista, "Se insertó el registro");
@@ -97,6 +100,9 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
                 vista.tablaPremios.setModel(modelo.cargarDatos());
             }
         }
+     }catch(NullPointerException ex){
+        JOptionPane.showMessageDialog(null, "ERROR: CAMPOS NULOS");
+     } 
     }
 
     @Override

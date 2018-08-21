@@ -95,6 +95,10 @@ public class ModeloPremios {
         {
             //Para abrir una conxion a la BD
             Connection con = conexion.abrirConexion();
+            
+            /*AQUI AGREGUE UN AUTOCOMMIT*/
+            con.setAutoCommit(false);
+            
             //Para Ejecutar la consulta
             //Statement s = con.createStatement();
             //JOptionPane.showMessageDialog(null, vConFecha+"---"+vConHora+"---"+vConTipo+"---"+vConNombre+"---"+vConPeso);
@@ -106,6 +110,8 @@ public class ModeloPremios {
             preparedStatement.setInt(4,vStock);
             preparedStatement.executeUpdate();
             //JOptionPane.showMessageDialog(null, "Registro agregado");
+            /*AQUI HAY UN COMMIT*/
+            con.commit();
             conexion.cerrarConexion(con);
         }
         catch(SQLException e)
@@ -120,13 +126,20 @@ public class ModeloPremios {
         {
             Connection con = conexion .abrirConexion();
             Statement s = con.createStatement();
+           
+            /*AQUI AGREGUE UN AUTOCOMMIT*/
+            con.setAutoCommit(false);
+            
             System.out.println("UPDATE premios SET Id_premio ='"+vIdPrem+"', descripcion = '"+vDes+"', Puntos = '"+vPuntos+"', Stock = '"+vStock+"' WHERE Id_premio = "+vIdPrem+";");
             s.executeUpdate("UPDATE premios SET Id_premio ='"+vIdPrem+"', descripcion = '"+vDes+"', Puntos = '"+vPuntos+"', Stock = '"+vStock+"' WHERE Id_premio = "+vIdPrem+";");
-
+            
+            /*AQUI HAY UN COMMIT*/
+            con.commit();
             conexion.cerrarConexion(con);
             return true;
         
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
             return false;
         } 
     }
@@ -137,12 +150,21 @@ public class ModeloPremios {
         {
             Connection con = conexion.abrirConexion();
             Statement s = con.createStatement();
+           
+            /*AQUI AGREGUE UN AUTOCOMMIT*/
+            con.setAutoCommit(false);
+            
             s.executeUpdate("delete from premios where Id_premio="+idPremio+";") ;
-                conexion.cerrarConexion(con);
-                return true;
+            
+            /*AQUI HAY UN COMMIT*/
+            con.commit();
+            
+            conexion.cerrarConexion(con);
+            return true;
                     
         } catch (SQLException e) 
         {
+            JOptionPane.showMessageDialog(null, e.getMessage());
             return false;
         }
         

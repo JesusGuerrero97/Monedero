@@ -42,6 +42,7 @@ public class ControladorMenuPrincipal implements ActionListener {
         this.menu.btnPremios.addActionListener(this);
         this.menu.btnCompras.addActionListener(this);
         this.menu.btnAbono.addActionListener(this);
+        this.menu.btnCargo.addActionListener(this);
     }
 
     @Override
@@ -80,23 +81,27 @@ public class ControladorMenuPrincipal implements ActionListener {
         }
         else if(this.menu.btnAbono == e.getSource())
         {   
-//            modeloAbono mod = new modeloAbono();
-//            Abono vis = new Abono();
-//            controladorAbono comp = new controladorAbono(mod,vis);
-//            comp.iniciarVista();
-            
-            menu.dispose();
+              modeloAbono mod = new modeloAbono();
+              Abono vis = new Abono();
+             controladorAbono comp = new controladorAbono(mod,vis);
+             comp.iniciarVista();
+             //menu.dispose();
         }
         else if(this.menu.btnCargo == e.getSource())
         {   
-            
+            ModeloCarga mod = new ModeloCarga();
+            Cargo vis = new Cargo();
+            ControladorCargo conC = new ControladorCargo(mod,vis);
+            conC.iniciarVista();
         }
-        else if(menu.btnMovimientos == e.getSource())
+        else if(this.menu.btnMovimientos == e.getSource())
         {
             Movimientos mov = new Movimientos();
-            ModeloMovimientos modelo = new ModeloMovimientos();
-            ControladorReportes cont = new ControladorReportes(modelo,mov);  
+            ModeloMovimientos mod = new ModeloMovimientos();
+            ControladorReportes cont = new ControladorReportes(mod,mov);  
             cont.IniciarVista();
+            
+            //menu.dispose();
             
         }
     }
