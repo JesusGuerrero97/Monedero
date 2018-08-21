@@ -39,7 +39,7 @@ public class ControladorReportes implements ActionListener{
     }
     public void IniciarVista(){
         vista.btnGenerar.addActionListener(this);
-        vista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //vista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vista.btnSaldo.addActionListener(this);
         vista.setLocationRelativeTo(null);
         modelo.llenarComboClientes(vista.cmbCliente);

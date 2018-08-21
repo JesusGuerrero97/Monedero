@@ -82,6 +82,10 @@ public class modeloAbono {
         {
             Connection con = conexion.abrirConexion();
             Statement s = con.createStatement();
+            
+             /*AQUI AGREGUE UN AUTOCOMMIT*/
+            con.setAutoCommit(false);
+            
             ResultSet rs = s.executeQuery("select Puntos from ticket where Id_ticket="+id_ticket+";");
             //System.out.println("insert into cliente(Id_cliente, Nombre, Direccion, Telefono, Correo, Num_cuenta, Puntos) values("+id_cliente+",'"+nombre+"', '"+direccion+"', '"+telefono+"', '"+correo+"', "+num_cuenta+", " +puntos+");");
             Statement s2 = con.createStatement();
@@ -95,8 +99,11 @@ public class modeloAbono {
             s.executeUpdate("INSERT into movimientos(Id_mov,Num_cuenta,Tipo,Fecha) values(NULL,"+numcu+",'"+C+"','"+Fecha+"');");
             s.executeUpdate("INSERT into abono(Id_abono,Id_ticket,Num_cuenta) values(NULL,"+id_ticket+","+numcu+");");
             s.executeUpdate("UPDATE ticket SET status=2 WHERE Id_ticket="+id_ticket+";");
+            
+            /*AQUI HAY UN COMMIT*/
+            con.commit();
             conexion.cerrarConexion(con);
-                return true;
+            return true;
 //            if(puntoCli>=puntosPre){
 //                JOptionPane.showMessageDialog(null, "El premio ha sido canjeado con exito");
 //                //System.out.println("UPDATE cliente SET cliente.`Puntos`= (cliente.`Puntos`) - ("+puntosPre+") WHERE cliente.`Num_cuenta`="+numcu+";");

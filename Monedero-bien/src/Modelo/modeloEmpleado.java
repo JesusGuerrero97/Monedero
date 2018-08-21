@@ -100,6 +100,8 @@ public class modeloEmpleado {
         try
         {
             Connection con = conexion.abrirConexion();
+             /*AQUI AGREGUE UN AUTOCOMMIT*/
+            con.setAutoCommit(false);
             String query  = "INSERT INTO empleado( Id_empleado, Nombre, Direccion, Telefono, Id_Sucursal) values (?,?,?,?,?)";
             PreparedStatement preparedStatement = con.prepareStatement(query);
             preparedStatement.setInt(1,vId);
@@ -108,6 +110,10 @@ public class modeloEmpleado {
             preparedStatement.setString(4,vTel);
             preparedStatement.setInt(5,vIdSuc);
             preparedStatement.executeUpdate();
+            
+            /*AQUI HAY UN COMMIT*/
+            con.commit();
+            
             conexion.cerrarConexion(con);
         }
         catch(SQLException e)
@@ -122,9 +128,16 @@ public class modeloEmpleado {
         {
             Connection con = conexion .abrirConexion();
             Statement s = con.createStatement();
+            
+             /*AQUI AGREGUE UN AUTOCOMMIT*/
+            con.setAutoCommit(false);
+            
             System.out.println("UPDATE empleado SET Nombre ='"+vNom+"', Direccion = '"+vDir+"', Telefono = '"+vTel+"', Id_Sucursal = "+vIdSuc+" WHERE Id_empleado = "+vId+";");
             s.executeUpdate("UPDATE empleado SET Nombre ='"+vNom+"', Direccion = '"+vDir+"', Telefono = '"+vTel+"', Id_Sucursal = "+vIdSuc+" WHERE Id_empleado = "+vId+";");
 
+            /*AQUI HAY UN COMMIT*/
+            con.commit();
+            
             conexion.cerrarConexion(con);
             return true;
         
@@ -138,8 +151,15 @@ public class modeloEmpleado {
         {
             Connection con = conexion.abrirConexion();
             Statement s = con.createStatement();
+            
+            /*AQUI AGREGUE UN AUTOCOMMIT*/
+            con.setAutoCommit(false);
+            
             s.executeUpdate("delete from empleado where Id_empleado="+idEmpleado+"") ;
-                conexion.cerrarConexion(con);
+            
+            /*AQUI HAY UN COMMIT*/
+            con.commit();
+            conexion.cerrarConexion(con);
                 return true;
             
         } catch (SQLException e) 

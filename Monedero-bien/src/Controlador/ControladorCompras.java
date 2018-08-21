@@ -49,6 +49,8 @@ public class ControladorCompras implements ActionListener, MouseListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+     try
+     {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         String fecha= df.format(vista.JDate.getDate());
         int id_empleado = vista.cmbEmpleado.getItemAt(vista.cmbEmpleado.getSelectedIndex()).getId_emp();
@@ -67,6 +69,9 @@ public class ControladorCompras implements ActionListener, MouseListener {
             }
             else { JOptionPane.showMessageDialog(vista, "El registro no pudo ser completado con exito"); }
         }
+      }catch(NullPointerException ex){
+                JOptionPane.showMessageDialog(null, "ERROR: CAMPOS NULOS");
+      }    
     }
 
     @Override

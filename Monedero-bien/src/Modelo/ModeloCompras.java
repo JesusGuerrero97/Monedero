@@ -32,10 +32,13 @@ public class ModeloCompras {
         {
             Connection con = conexion.abrirConexion();
             Statement s = con.createStatement();
+            /*AQUI AGREGUE UN AUTOCOMMIT*/
+            con.setAutoCommit(false);
             //System.out.println("insert into cliente(Id_cliente, Nombre, Direccion, Telefono, Correo, Num_cuenta, Puntos) values("+id_cliente+",'"+nombre+"', '"+direccion+"', '"+telefono+"', '"+correo+"', "+num_cuenta+", " +puntos+");");
             s.executeUpdate("insert into compra(Id_compra, Total, Num_cuenta, Id_sucursal, Fecha, id_emp) values("+Id_compra+","+total+", "+numeroCuenta+", "+id_sucursal+", '"+fecha+"', "+id_emp+");");
             //INSERT INTO `biblioteca`.`libro` (`id_libro`, `nombre`, `autor`, `editorial`, `fecha_pub`, `numpag`, `edicion`, `genero`, `id_sucursal`, `existencia`) VALUES ('30', 'porpoe', 'dngf', 'dskygfs', '1998-02-22', '234', 'efds', 'edff', '3', '15');
-            
+            /*AQUI HAY UN COMMIT*/
+            con.commit();
             conexion.cerrarConexion(con);
             return true;
         } catch (SQLException e) {
@@ -48,11 +51,14 @@ public class ModeloCompras {
         {
             Connection con = conexion.abrirConexion();
             Statement s = con.createStatement();
+            /*AQUI AGREGUE UN AUTOCOMMIT*/
+            con.setAutoCommit(false);
             //System.out.println("insert into cliente(Id_cliente, Nombre, Direccion, Telefono, Correo, Num_cuenta, Puntos) values("+id_cliente+",'"+nombre+"', '"+direccion+"', '"+telefono+"', '"+correo+"', "+num_cuenta+", " +puntos+");");
             System.out.println("insert into ticket(Id_ticket, Folio, Puntos, Id_compra, status) values("+Id_ticket+",'"+Folio+"', "+puntos+", "+id_compra+", "+status+");");
             s.executeUpdate("insert into ticket(Id_ticket, Folio, Puntos, Id_compra, status) values("+Id_ticket+",'"+Folio+"', "+puntos+", "+id_compra+", "+status+");");
             //INSERT INTO `biblioteca`.`libro` (`id_libro`, `nombre`, `autor`, `editorial`, `fecha_pub`, `numpag`, `edicion`, `genero`, `id_sucursal`, `existencia`) VALUES ('30', 'porpoe', 'dngf', 'dskygfs', '1998-02-22', '234', 'efds', 'edff', '3', '15');
-            
+            /*AQUI HAY UN COMMIT*/
+            con.commit();
             conexion.cerrarConexion(con);
             return true;
         } catch (SQLException e) {

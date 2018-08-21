@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
  * @author Jesus
  */
 public class ModeloCarga {
+    
      private final Conexion conexion = new Conexion();
      
      public void llenarComboPremios(JComboBox<PremiosComboBox> comboPremios)
@@ -83,6 +84,8 @@ public class ModeloCarga {
         {
             Connection con = conexion.abrirConexion();
             Statement s = con.createStatement();
+            /*AQUI AGREGUE UN AUTOCOMMIT*/
+            con.setAutoCommit(false);
             ResultSet rs = s.executeQuery("select Puntos from cliente where Num_cuenta="+numcu+";");
             //System.out.println("insert into cliente(Id_cliente, Nombre, Direccion, Telefono, Correo, Num_cuenta, Puntos) values("+id_cliente+",'"+nombre+"', '"+direccion+"', '"+telefono+"', '"+correo+"', "+num_cuenta+", " +puntos+");");
             Statement s2 = con.createStatement();
@@ -112,6 +115,8 @@ public class ModeloCarga {
                 s.executeUpdate("UPDATE premios set Stock=(Stock - 1) WHERE Id_premio="+id_premio+";");
                 s.executeUpdate("INSERT into movimientos(Id_mov,Num_cuenta,Tipo,Fecha) values(NULL,"+numcu+",'"+C+"','"+Fecha+"');");
                 s.executeUpdate("INSERT into cargo(Id_cargo,Id_premio,Num_cuenta) values(NULL,"+id_premio+","+numcu+");");
+                /*AQUI HAY UN COMMIT*/
+                con.commit();
                 conexion.cerrarConexion(con);
                 return true;
             }

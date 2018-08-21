@@ -101,7 +101,7 @@ public class ControladorMenuPrincipal implements ActionListener {
             ControladorReportes cont = new ControladorReportes(mod,mov);  
             cont.IniciarVista();
             
-            menu.dispose();
+            //menu.dispose();
             
         }
     }

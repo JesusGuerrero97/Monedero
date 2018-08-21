@@ -33,8 +33,6 @@ public class Movimientos extends javax.swing.JFrame {
         cmbCliente = new javax.swing.JComboBox<>();
         btnSaldo = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         btnGenerar.setText("Registro de Movimientos");
 
         btnSaldo.setText("Consultar Saldo");

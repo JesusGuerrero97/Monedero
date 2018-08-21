@@ -25,9 +25,16 @@ public class modeloClientes{
         {
             Connection con = conexion.abrirConexion();
             Statement s = con.createStatement();
+            
+             /*AQUI AGREGUE UN AUTOCOMMIT*/
+            con.setAutoCommit(false);
+            
             System.out.println("insert into cliente(Id_cliente, Nombre, Direccion, Telefono, Correo, Num_cuenta, Puntos) values("+id_cliente+",'"+nombre+"', '"+direccion+"', '"+telefono+"', '"+correo+"', "+num_cuenta+", " +puntos+");");
             s.executeUpdate("insert into cliente(Id_cliente, Nombre, Direccion, Telefono, Correo, Num_cuenta, Puntos) values("+id_cliente+",'"+nombre+"', '"+direccion+"', '"+telefono+"', '"+correo+"', "+num_cuenta+"," +puntos+");");
             //INSERT INTO `biblioteca`.`libro` (`id_libro`, `nombre`, `autor`, `editorial`, `fecha_pub`, `numpag`, `edicion`, `genero`, `id_sucursal`, `existencia`) VALUES ('30', 'porpoe', 'dngf', 'dskygfs', '1998-02-22', '234', 'efds', 'edff', '3', '15');
+            
+            /*AQUI HAY UN COMMIT*/
+            con.commit();
             
             conexion.cerrarConexion(con);
             return true;
@@ -45,8 +52,14 @@ public class modeloClientes{
             Connection con = conexion .abrirConexion();
             Statement s = con.createStatement();
            
+             /*AQUI AGREGUE UN AUTOCOMMIT*/
+            con.setAutoCommit(false);
+            
             s.executeUpdate("UPDATE cliente SET Nombre = '"+nombre+"', Direccion = '"+direccion+"', Telefono = '"+telefono+"', Correo = '"+correo+"' where Id_cliente = "+id+";");
     
+            /*AQUI HAY UN COMMIT*/
+            con.commit();
+            
             conexion.cerrarConexion(con);
             return true;
         
@@ -60,7 +73,15 @@ public class modeloClientes{
         {
             Connection con = conexion .abrirConexion();
             Statement s = con.createStatement();
+            
+             /*AQUI AGREGUE UN AUTOCOMMIT*/
+            con.setAutoCommit(false);
+            
             s.executeUpdate("delete from cliente where Id_cliente="+id+"");
+            
+            /*AQUI HAY UN COMMIT*/
+            con.commit();
+            
             conexion.cerrarConexion(con);
             return true;
         
