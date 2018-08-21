@@ -75,11 +75,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnCompras.setDefaultCapable(false);
         btnCompras.setFocusPainted(false);
         btnCompras.setFocusable(false);
-        btnCompras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnComprasActionPerformed(evt);
-            }
-        });
         panelbotones.add(btnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, -1, -1));
 
         btnAbono.setText("ABONO");

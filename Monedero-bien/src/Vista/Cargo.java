@@ -27,30 +27,31 @@ public class Cargo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        num = new javax.swing.JLabel();
-        txtNumCuenta = new javax.swing.JTextField();
         id_cargo = new javax.swing.JLabel();
         txtIdCargo = new javax.swing.JTextField();
         id_premio = new javax.swing.JLabel();
+        num = new javax.swing.JLabel();
+        cmbPremio = new javax.swing.JComboBox<>();
+        cmbNum_Cuen = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        num.setText("Número de cuenta");
-        jPanel1.add(num, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 135, -1, -1));
-        jPanel1.add(txtNumCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 132, 198, -1));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 111, 1040, 190));
-
         id_cargo.setText("Id_cargo");
-        getContentPane().add(id_cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
-        getContentPane().add(txtIdCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 80, -1));
+        getContentPane().add(id_cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, -1, -1));
+        getContentPane().add(txtIdCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 80, -1));
 
         id_premio.setText("Premio");
-        getContentPane().add(id_premio, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+        getContentPane().add(id_premio, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
+
+        num.setText("Número de cuenta");
+        getContentPane().add(num, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+
+        cmbPremio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cmbPremio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, -1, -1));
+
+        cmbNum_Cuen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cmbNum_Cuen, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -91,11 +92,11 @@ public class Cargo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JComboBox<String> cmbNum_Cuen;
+    public javax.swing.JComboBox<String> cmbPremio;
     public javax.swing.JLabel id_cargo;
     public javax.swing.JLabel id_premio;
-    private javax.swing.JPanel jPanel1;
     public javax.swing.JLabel num;
     public javax.swing.JTextField txtIdCargo;
-    public javax.swing.JTextField txtNumCuenta;
     // End of variables declaration//GEN-END:variables
 }
