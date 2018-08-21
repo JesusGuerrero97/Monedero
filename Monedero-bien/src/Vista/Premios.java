@@ -37,7 +37,7 @@ public class Premios extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtPuntos = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        btnAgregar1 = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -108,11 +108,11 @@ public class Premios extends javax.swing.JFrame {
         jLabel7.setText("Agregar");
         panelDatos.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 40, -1, -1));
 
-        btnAgregar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-más-35.png"))); // NOI18N
-        btnAgregar1.setBorder(null);
-        btnAgregar1.setBorderPainted(false);
-        btnAgregar1.setContentAreaFilled(false);
-        panelDatos.add(btnAgregar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 30, -1, -1));
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-más-35.png"))); // NOI18N
+        btnAgregar.setBorder(null);
+        btnAgregar.setBorderPainted(false);
+        btnAgregar.setContentAreaFilled(false);
+        panelDatos.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 30, -1, -1));
 
         btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-lápiz-35.png"))); // NOI18N
         btnEditar.setBorder(null);
@@ -263,7 +263,7 @@ public class Premios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnAgregar1;
+    public javax.swing.JButton btnAgregar;
     public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnEditar;
     public javax.swing.JButton btnEliminar;
