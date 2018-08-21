@@ -39,8 +39,6 @@ public class Clientes extends javax.swing.JFrame {
         txtIdCliente = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txtNumCuenta = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        txtPuntos = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         clientes = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
@@ -48,7 +46,6 @@ public class Clientes extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnEliminar = new javax.swing.JButton();
         btnEliminar2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -126,19 +123,6 @@ public class Clientes extends javax.swing.JFrame {
         });
         getContentPane().add(txtNumCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 350, -1));
 
-        jLabel9.setBackground(new java.awt.Color(0, 0, 51));
-        jLabel9.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel9.setText("Puntos:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
-
-        txtPuntos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPuntosActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 350, -1));
-
         clientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -172,10 +156,12 @@ public class Clientes extends javax.swing.JFrame {
         jLabel1.setText("CLIENTES");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, -1, -1));
 
-        btnEliminar.setText("ELIMINAR");
-        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 180, -1, -1));
-
         btnEliminar2.setText("ELIMINAR");
+        btnEliminar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminar2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnEliminar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 180, -1, -1));
 
         pack();
@@ -201,13 +187,13 @@ public class Clientes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumCuentaActionPerformed
 
-    private void txtPuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPuntosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPuntosActionPerformed
-
     private void clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientesMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_clientesMouseClicked
+
+    private void btnEliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminar2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,7 +235,6 @@ public class Clientes extends javax.swing.JFrame {
     public javax.swing.JButton btnAgregar1;
     public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnEditar;
-    public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnEliminar2;
     public javax.swing.JButton btnRegresar;
     public javax.swing.JTable clientes;
@@ -260,14 +245,12 @@ public class Clientes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTextField txtCorreo;
     public javax.swing.JTextField txtDireccion;
     public javax.swing.JTextField txtIdCliente;
     public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtNumCuenta;
-    public javax.swing.JTextField txtPuntos;
     public javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
