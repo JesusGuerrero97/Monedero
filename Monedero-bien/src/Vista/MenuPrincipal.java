@@ -113,9 +113,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         panelbotones.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, -1, -1));
 
         btnMovimientos.setText("Reportes Movimientos");
-        panelbotones.add(btnMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 110, -1, -1));
+        panelbotones.add(btnMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, -1, -1));
 
-        getContentPane().add(panelbotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1018, 395));
+        getContentPane().add(panelbotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1018, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
