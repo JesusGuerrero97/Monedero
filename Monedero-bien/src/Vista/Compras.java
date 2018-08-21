@@ -30,67 +30,38 @@ public class Compras extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtNumeroCuenta = new javax.swing.JTextField();
-        txtIdCompra = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        txtTotal = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         compras = new javax.swing.JTable();
-        btnCancelar = new javax.swing.JButton();
-        btnAgregar1 = new javax.swing.JButton();
-        cmbSucursal = new javax.swing.JComboBox<>();
+        btnCancelar1 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        btnAgregar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        txtTotal = new javax.swing.JTextField();
+        txtNumeroCuenta = new javax.swing.JTextField();
+        txtIdCompra = new javax.swing.JTextField();
         cmbEmpleado = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         JDate = new com.toedter.calendar.JDateChooser();
+<<<<<<< HEAD
         bnRegresar = new javax.swing.JButton();
+=======
+        cmbSucursal = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
+>>>>>>> f00cec718070a2b052cf1e7f7b0d493280a29195
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        txtNumeroCuenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumeroCuentaActionPerformed(evt);
-            }
-        });
-
-        jLabel11.setBackground(new java.awt.Color(0, 0, 51));
-        jLabel11.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel11.setText("Id_compra:");
-
-        jLabel3.setBackground(new java.awt.Color(0, 0, 51));
-        jLabel3.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel3.setText("Número de cuenta:");
-
-        jLabel4.setBackground(new java.awt.Color(0, 0, 51));
-        jLabel4.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel4.setText("Sucursal:");
-
-        jLabel5.setBackground(new java.awt.Color(0, 0, 51));
-        jLabel5.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel5.setText("Empleado:");
-
-        jLabel7.setBackground(new java.awt.Color(0, 0, 51));
-        jLabel7.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel7.setText("Total:");
-
-        txtTotal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTotalActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setBackground(new java.awt.Color(0, 0, 51));
-        jLabel8.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel8.setText("Fecha:");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         compras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -108,9 +79,124 @@ public class Compras extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(compras);
 
-        btnCancelar.setText("CANCELAR");
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 693, 210));
 
-        btnAgregar1.setText("AGREGAR");
+        btnCancelar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-cancelar-35.png"))); // NOI18N
+        btnCancelar1.setBorder(null);
+        btnCancelar1.setBorderPainted(false);
+        btnCancelar1.setContentAreaFilled(false);
+        jPanel1.add(btnCancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 30, -1));
+
+        jLabel14.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel14.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(22, 160, 133));
+        jLabel14.setText("Cancelar");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, -1, -1));
+
+        jLabel6.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(22, 160, 133));
+        jLabel6.setText("Agregar");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 258, -1, -1));
+
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-más-35.png"))); // NOI18N
+        btnAgregar.setBorder(null);
+        btnAgregar.setBorderPainted(false);
+        btnAgregar.setContentAreaFilled(false);
+        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 248, -1, -1));
+
+        jLabel7.setBackground(new java.awt.Color(0, 0, 51));
+        jLabel7.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel7.setText("Total:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, -1, -1));
+
+        txtTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTotalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 210, 153, -1));
+
+        txtNumeroCuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumeroCuentaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtNumeroCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 172, -1));
+        jPanel1.add(txtIdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 80, -1));
+
+        jPanel1.add(cmbEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 172, -1));
+
+        jLabel11.setBackground(new java.awt.Color(0, 0, 51));
+        jLabel11.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel11.setText("Id_compra:");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, -1, -1));
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 51));
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel3.setText("Número de cuenta:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, -1));
+
+        jLabel5.setBackground(new java.awt.Color(0, 0, 51));
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel5.setText("Empleado:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, -1, -1));
+        jPanel1.add(JDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 170, 153, -1));
+
+        jPanel1.add(cmbSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 140, 155, -1));
+
+        jLabel4.setBackground(new java.awt.Color(0, 0, 51));
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel4.setText("Sucursal:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 130, -1, -1));
+
+        jLabel8.setBackground(new java.awt.Color(0, 0, 51));
+        jLabel8.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel8.setText("Fecha:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 170, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(22, 160, 133));
+        jPanel2.setForeground(new java.awt.Color(22, 160, 133));
+
+        jLabel10.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel10.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Compras");
+
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-izquierda-en-círculo-2-35.png"))); // NOI18N
+        btnRegresar.setBorder(null);
+        btnRegresar.setBorderPainted(false);
+        btnRegresar.setContentAreaFilled(false);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(btnRegresar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(491, 491, 491))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnRegresar)
+                    .addComponent(jLabel10))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, -1));
 
         bnRegresar.setText("Regresar");
         bnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -123,6 +209,7 @@ public class Compras extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -202,6 +289,13 @@ public class Compras extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
+=======
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+>>>>>>> f00cec718070a2b052cf1e7f7b0d493280a29195
         );
 
         pack();
@@ -261,18 +355,29 @@ public class Compras extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public com.toedter.calendar.JDateChooser JDate;
+<<<<<<< HEAD
     public javax.swing.JButton bnRegresar;
     public javax.swing.JButton btnAgregar1;
     public javax.swing.JButton btnCancelar;
+=======
+    public javax.swing.JButton btnAgregar;
+    public javax.swing.JButton btnCancelar1;
+    public javax.swing.JButton btnRegresar;
+>>>>>>> f00cec718070a2b052cf1e7f7b0d493280a29195
     public javax.swing.JComboBox<EmpleadoComboBox> cmbEmpleado;
     public javax.swing.JComboBox<SucursalComboBox> cmbSucursal;
     public javax.swing.JTable compras;
+    private javax.swing.JLabel jLabel10;
     public javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTextField txtIdCompra;
     public javax.swing.JTextField txtNumeroCuenta;

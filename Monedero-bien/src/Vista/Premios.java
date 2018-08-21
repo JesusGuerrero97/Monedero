@@ -35,19 +35,25 @@ public class Premios extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btnCancelar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
-        btnEditar = new javax.swing.JButton();
-        btnAgregar = new javax.swing.JButton();
         txtPuntos = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        btnAgregar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        btnEliminar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaPremios = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        panelDatos.setBackground(new java.awt.Color(255, 255, 255));
         panelDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtStock.addActionListener(new java.awt.event.ActionListener() {
@@ -89,18 +95,6 @@ public class Premios extends javax.swing.JFrame {
         jLabel4.setText("Puntos:");
         panelDatos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 140, -1, -1));
 
-        btnCancelar.setText("CANCELAR");
-        panelDatos.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(817, 148, 80, -1));
-
-        btnEliminar.setText("ELIMINAR");
-        panelDatos.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(816, 108, -1, -1));
-
-        btnEditar.setText("EDITAR");
-        panelDatos.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(816, 63, 80, -1));
-
-        btnAgregar.setText("AGREGAR");
-        panelDatos.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(816, 23, -1, -1));
-
         txtPuntos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPuntosActionPerformed(evt);
@@ -108,7 +102,53 @@ public class Premios extends javax.swing.JFrame {
         });
         panelDatos.add(txtPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 146, 350, -1));
 
-        getContentPane().add(panelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 1050, -1));
+        jLabel7.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(22, 160, 133));
+        jLabel7.setText("Agregar");
+        panelDatos.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 40, -1, -1));
+
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-más-35.png"))); // NOI18N
+        btnAgregar.setBorder(null);
+        btnAgregar.setBorderPainted(false);
+        btnAgregar.setContentAreaFilled(false);
+        panelDatos.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 30, -1, -1));
+
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-lápiz-35.png"))); // NOI18N
+        btnEditar.setBorder(null);
+        btnEditar.setBorderPainted(false);
+        btnEditar.setContentAreaFilled(false);
+        panelDatos.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 70, 30, -1));
+
+        jLabel12.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(22, 160, 133));
+        jLabel12.setText("Editar");
+        panelDatos.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 80, -1, -1));
+
+        jLabel13.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel13.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(22, 160, 133));
+        jLabel13.setText("Eliminar");
+        panelDatos.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 120, -1, -1));
+
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-basura-35.png"))); // NOI18N
+        btnEliminar.setBorder(null);
+        btnEliminar.setBorderPainted(false);
+        btnEliminar.setContentAreaFilled(false);
+        panelDatos.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 110, -1, -1));
+
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-cancelar-35.png"))); // NOI18N
+        btnCancelar.setBorder(null);
+        btnCancelar.setBorderPainted(false);
+        btnCancelar.setContentAreaFilled(false);
+        panelDatos.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 160, 40, -1));
+
+        jLabel14.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel14.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(22, 160, 133));
+        jLabel14.setText("Cancelar");
+        panelDatos.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 170, -1, -1));
 
         tablaPremios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -126,13 +166,47 @@ public class Premios extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tablaPremios);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 370, 590, 170));
+        panelDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 590, 170));
 
-        btnRegresar.setText("REGRESAR");
-        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
+        getContentPane().add(panelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1050, 460));
 
-        jLabel1.setText("PREMIOS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, -1, -1));
+        jPanel1.setBackground(new java.awt.Color(22, 160, 133));
+        jPanel1.setForeground(new java.awt.Color(22, 160, 133));
+
+        jLabel10.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel10.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Premios");
+
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-izquierda-en-círculo-2-35.png"))); // NOI18N
+        btnRegresar.setBorder(null);
+        btnRegresar.setBorderPainted(false);
+        btnRegresar.setContentAreaFilled(false);
+        btnRegresar.setFocusable(false);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(btnRegresar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 376, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(491, 491, 491))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnRegresar)
+                    .addComponent(jLabel10))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 90));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -194,11 +268,16 @@ public class Premios extends javax.swing.JFrame {
     public javax.swing.JButton btnEditar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnRegresar;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JPanel panelDatos;
     public javax.swing.JTable tablaPremios;

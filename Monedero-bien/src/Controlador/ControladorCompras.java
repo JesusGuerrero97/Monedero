@@ -31,9 +31,14 @@ public class ControladorCompras implements ActionListener, MouseListener {
     }
     
     public void iniciarVista(){
+<<<<<<< HEAD
         this.vista.btnAgregar1.addActionListener(this);
         this.vista.btnCancelar.addActionListener(this);
         this.vista.bnRegresar.addActionListener(this);
+=======
+        this.vista.btnAgregar.addActionListener(this);
+        this.vista.btnCancelar1.addActionListener(this);
+>>>>>>> f00cec718070a2b052cf1e7f7b0d493280a29195
         modelo.llenarComboEmpleado(vista.cmbEmpleado);
         modelo.llenarComboSucursal(vista.cmbSucursal);
         
@@ -57,7 +62,7 @@ public class ControladorCompras implements ActionListener, MouseListener {
         int id_empleado = vista.cmbEmpleado.getItemAt(vista.cmbEmpleado.getSelectedIndex()).getId_emp();
         int id_sucursal = vista.cmbSucursal.getItemAt(vista.cmbSucursal.getSelectedIndex()).getId_sucursal();
         
-        if(vista.btnAgregar1 == e.getSource())
+        if(vista.btnAgregar == e.getSource())
         {
             if(modelo.agregarCliente(Integer.parseInt(vista.txtIdCompra.getText()),Integer.parseInt(vista.txtTotal.getText()) , Integer.parseInt(vista.txtNumeroCuenta.getText()), id_sucursal, fecha, id_empleado))
             {

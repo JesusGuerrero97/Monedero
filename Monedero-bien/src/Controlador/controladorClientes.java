@@ -41,7 +41,7 @@ public controladorClientes(modeloClientes Modelo, Clientes Vista)
         vista.btnEditar.addActionListener(this);//Aqui
         vista.btnCancelar.addActionListener(this);//Aqui
        // vista.btnBuscar.addActionListener(this);
-        vista.btnEliminar2.addActionListener(this);
+        vista.btnEliminar.addActionListener(this);
         vista.btnRegresar.addActionListener(this);
         //vista.btnActualizar.addActionListener(this);
 }
@@ -90,7 +90,7 @@ public controladorClientes(modeloClientes Modelo, Clientes Vista)
 //            }
                 limpiar();
         }
-        if(vista.btnEliminar2 == e.getSource()) {
+        if(vista.btnEliminar == e.getSource()) {
             if(modelo.deleteCliente(Integer.parseInt(vista.txtIdCliente.getText()))) {
                 JOptionPane.showMessageDialog(vista, "Registro eliminado exitosamente");
                 limpiar();

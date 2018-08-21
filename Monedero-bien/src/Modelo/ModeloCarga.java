@@ -26,7 +26,7 @@ public class ModeloCarga {
         {
          Connection con = conexion.abrirConexion();
          Statement s = con.createStatement();
-         ResultSet rs=s.executeQuery("SELECT Id_premio,Descripcion FROM premios ORDER BY Descripcion");
+         ResultSet rs=s.executeQuery("SELECT Id_premio,Descripcion FROM premios where Stock!=0 ORDER BY Descripcion");
          while(rs.next())
          {
              comboPremios.addItem(new PremiosComboBox(rs.getInt("Id_premio"),rs.getString("Descripcion")));
