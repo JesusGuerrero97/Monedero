@@ -41,6 +41,7 @@ public class ControladorMenuPrincipal implements ActionListener {
        // this.menu..addActionListener(this);
         this.menu.btnPremios.addActionListener(this);
         this.menu.btnCompras.addActionListener(this);
+        this.menu.btnAbono.addActionListener(this);
     }
 
     @Override
@@ -79,7 +80,12 @@ public class ControladorMenuPrincipal implements ActionListener {
         }
         else if(this.menu.btnAbono == e.getSource())
         {   
+//            modeloAbono mod = new modeloAbono();
+//            Abono vis = new Abono();
+//            controladorAbono comp = new controladorAbono(mod,vis);
+//            comp.iniciarVista();
             
+            menu.dispose();
         }
         else if(this.menu.btnCargo == e.getSource())
         {   

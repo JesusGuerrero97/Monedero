@@ -36,6 +36,8 @@ public class Abono extends javax.swing.JFrame {
         txtIdTicket = new javax.swing.JTextField();
         num1 = new javax.swing.JLabel();
         txtNumCuenta = new javax.swing.JTextField();
+        num2 = new javax.swing.JLabel();
+        btnCanje = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,15 +55,28 @@ public class Abono extends javax.swing.JFrame {
         jPanel1.add(txtPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 94, 198, -1));
         jPanel1.add(txtIdTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 132, 198, -1));
 
-        num1.setText("Número de cuenta:");
-        jPanel1.add(num1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, -1, -1));
+        num1.setText("Fecha");
+        jPanel1.add(num1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, -1, -1));
         jPanel1.add(txtNumCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 198, -1));
+
+        num2.setText("Número de cuenta:");
+        jPanel1.add(num2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, 20));
+
+        btnCanje.setText("Canjear");
+        btnCanje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCanjeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1060, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(352, 352, 352)
+                .addComponent(btnCanje)
+                .addContainerGap(637, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -70,16 +85,23 @@ public class Abono extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(459, Short.MAX_VALUE)
+                .addComponent(btnCanje)
+                .addGap(68, 68, 68))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(180, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(169, Short.MAX_VALUE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(114, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCanjeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCanjeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCanjeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,11 +139,13 @@ public class Abono extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnCanje;
     public javax.swing.JLabel id_cargo;
     public javax.swing.JLabel id_premio;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JLabel num;
     public javax.swing.JLabel num1;
+    public javax.swing.JLabel num2;
     public javax.swing.JTextField txtIdAbono;
     public javax.swing.JTextField txtIdTicket;
     public javax.swing.JTextField txtNumCuenta;
