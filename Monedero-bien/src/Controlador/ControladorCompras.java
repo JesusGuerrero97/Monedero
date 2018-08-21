@@ -50,9 +50,10 @@ public class ControladorCompras implements ActionListener, MouseListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String fecha= df.format(vista.JDate.getDate());
         int id_empleado = vista.cmbEmpleado.getItemAt(vista.cmbEmpleado.getSelectedIndex()).getId_emp();
         int id_sucursal = vista.cmbSucursal.getItemAt(vista.cmbSucursal.getSelectedIndex()).getId_sucursal();
-        String fecha= df.format(vista.JDate.getDate());
+        
         if(vista.btnAgregar1 == e.getSource())
         {
             if(modelo.agregarCliente(Integer.parseInt(vista.txtIdCompra.getText()),Integer.parseInt(vista.txtTotal.getText()) , Integer.parseInt(vista.txtNumeroCuenta.getText()), id_sucursal, fecha, id_empleado))

@@ -32,7 +32,10 @@ public class modeloClientes{
             conexion.cerrarConexion(con);
             return true;
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null,"ERROR:" + e.getMessage());
+            //System.out.println("ERROR:" + e.getMessage());
             return false;
+            
         }
         
     }
@@ -41,13 +44,14 @@ public class modeloClientes{
         {
             Connection con = conexion .abrirConexion();
             Statement s = con.createStatement();
-            System.out.println("update libro set Nombre = '"+nombre+"', Direccion = '"+direccion+"', Telefono = '"+telefono+"', Correo = '"+correo+"', Num_cuenta = '"+num_cuenta+ "', Puntos = '"+puntos+" where Id_cliente = "+id+";");
+           
             s.executeUpdate("update monedero.cliente set Nombre = '"+nombre+"', Direccion = '"+direccion+"', Telefono = '"+telefono+"', Correo = '"+correo+"', Num_cuenta = '"+num_cuenta+ "', Puntos = '"+puntos+" where Id_cliente = "+id+";");
 
             conexion.cerrarConexion(con);
             return true;
         
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null,"ERROR:" + e.getMessage());
             return false;
         } 
     }

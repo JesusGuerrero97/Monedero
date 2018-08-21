@@ -154,7 +154,7 @@ public class ModeloCompras {
         }
     }
     
-    public void llenarComboEmpleado(JComboBox<EmpleadoComboBox> comboParto)
+    public void llenarComboEmpleado(JComboBox<EmpleadoComboBox> comboEmpleado)
     {
         try
         {
@@ -163,7 +163,7 @@ public class ModeloCompras {
          ResultSet rs=s.executeQuery("SELECT Id_empleado,Nombre FROM empleado ORDER BY Nombre");
          while(rs.next())
          {
-             comboParto.addItem(new EmpleadoComboBox(rs.getInt("Id_empleado"),rs.getString("Nombre")));
+             comboEmpleado.addItem(new EmpleadoComboBox(rs.getInt("Id_empleado"),rs.getString("Nombre")));
          }
          conexion.cerrarConexion(con);
         }
