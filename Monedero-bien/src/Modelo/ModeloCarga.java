@@ -109,7 +109,7 @@ public class ModeloCarga {
                 JOptionPane.showMessageDialog(null, "El premio ha sido canjeado con exito");
                 //System.out.println("UPDATE cliente SET cliente.`Puntos`= (cliente.`Puntos`) - ("+puntosPre+") WHERE cliente.`Num_cuenta`="+numcu+";");
                 s.executeUpdate("UPDATE cliente SET cliente.`Puntos`= (cliente.`Puntos`) - ("+puntosPre+") WHERE cliente.`Num_cuenta`="+numcu+";");
-                
+                s.executeUpdate("UPDATE premios set Stock=(Stock - 1) WHERE Id_premio="+id_premio+";");
                 s.executeUpdate("INSERT into movimientos(Id_mov,Num_cuenta,Tipo,Fecha) values(NULL,"+numcu+",'"+C+"','"+Fecha+"');");
                 s.executeUpdate("INSERT into cargo(Id_cargo,Id_premio,Num_cuenta) values(NULL,"+id_premio+","+numcu+");");
                 conexion.cerrarConexion(con);
@@ -117,6 +117,7 @@ public class ModeloCarga {
             }
             return false;
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
             return false;
         }
         

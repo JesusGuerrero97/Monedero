@@ -50,7 +50,7 @@ public class Cargo extends javax.swing.JFrame {
         getContentPane().add(id_premio, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
         num.setText("FECHA:");
-        getContentPane().add(num, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, 20));
+        getContentPane().add(num, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, 20));
 
         getContentPane().add(cmbPremio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 140, -1));
 
@@ -66,7 +66,7 @@ public class Cargo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNum_cue, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 130, -1));
-        getContentPane().add(JDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, 20));
+        getContentPane().add(JDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 130, 20));
 
         num1.setText("Número de cuenta");
         getContentPane().add(num1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));

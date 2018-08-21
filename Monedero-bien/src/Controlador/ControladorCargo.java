@@ -46,20 +46,31 @@ public class ControladorCargo implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        int id_premio = vista.cmbPremio.getItemAt(vista.cmbPremio.getSelectedIndex()).getId_premio();
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        String fecha= df.format(vista.JDate.getDate());
-        if(vista.btnAceptar==e.getSource())
+        try
         {
-            if(modelo.checarPuntos(Integer.valueOf(vista.txtIdCargo.getText()),id_premio, Integer.valueOf(vista.txtNum_cue.getText()),fecha))
+            int id_premio = vista.cmbPremio.getItemAt(vista.cmbPremio.getSelectedIndex()).getId_premio();
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            String fecha= df.format(vista.JDate.getDate());
+            if(vista.btnAceptar==e.getSource())
             {
-                System.out.println("paso");
-                //JOptionPane.showMessageDialog(null, "");
+
+                    if(modelo.checarPuntos(Integer.valueOf(vista.txtIdCargo.getText()),id_premio, Integer.valueOf(vista.txtNum_cue.getText()),fecha))
+                    {
+                        System.out.println("paso");
+                        //JOptionPane.showMessageDialog(null, "");
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null, "intenta con otro premio");
+                    }
+
             }
-            else
+            else if(vista.btnCancelar== e.getSource())
             {
-                JOptionPane.showMessageDialog(null, "intenta con otro premio");
+
             }
-        }
+        }catch(NullPointerException ex){
+                JOptionPane.showMessageDialog(null, "ERROR: CAMPOS NULOS");
+        }     
     }
 }

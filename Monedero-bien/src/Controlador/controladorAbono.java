@@ -43,6 +43,8 @@ public class controladorAbono implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+      try
+      {
         int id_ticket = vista.cmbFolio.getItemAt(vista.cmbFolio.getSelectedIndex()).getId_ticket();
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         String fecha= df.format(vista.jDate.getDate());
@@ -57,5 +59,12 @@ public class controladorAbono implements ActionListener {
                 JOptionPane.showMessageDialog(vista, "No se pudo agregar el abono correctamente");
             }
         }
+        else if(vista.btnCancelar== e.getSource())
+        {
+            vista.dispose();
+        }
+      }catch(NullPointerException ex){
+                JOptionPane.showMessageDialog(null, "ERROR: CAMPOS NULOS");
+      }   
     }
 }
