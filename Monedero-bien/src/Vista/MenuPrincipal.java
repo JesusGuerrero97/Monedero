@@ -35,6 +35,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnCompras = new javax.swing.JButton();
         btnAbono = new javax.swing.JButton();
         btnCargo = new javax.swing.JButton();
+        btnMovimientos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -61,6 +62,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         btnCargo.setText("CARGO");
         panelbotones.add(btnCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 190, -1, -1));
+
+        btnMovimientos.setText("Reportes Movimientos");
+        panelbotones.add(btnMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 110, -1, -1));
 
         getContentPane().add(panelbotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 1018, 395));
 
@@ -109,6 +113,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public javax.swing.JButton btnCliente;
     public javax.swing.JButton btnCompras;
     public javax.swing.JButton btnEmpleado;
+    public javax.swing.JButton btnMovimientos;
     public javax.swing.JButton btnPremios;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JPanel panelbotones;

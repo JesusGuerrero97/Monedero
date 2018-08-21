@@ -28,31 +28,29 @@ public class Cargo extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        id_cargo = new javax.swing.JLabel();
-        id_premio = new javax.swing.JLabel();
         num = new javax.swing.JLabel();
-        txtIdCargo = new javax.swing.JTextField();
-        txtIdPremio = new javax.swing.JTextField();
         txtNumCuenta = new javax.swing.JTextField();
+        id_cargo = new javax.swing.JLabel();
+        txtIdCargo = new javax.swing.JTextField();
+        id_premio = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        id_cargo.setText("Id_cargo");
-        jPanel1.add(id_cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 59, -1, -1));
-
-        id_premio.setText("id_premio");
-        jPanel1.add(id_premio, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 97, -1, -1));
-
         num.setText("Número de cuenta");
         jPanel1.add(num, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 135, -1, -1));
-        jPanel1.add(txtIdCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 56, 198, -1));
-        jPanel1.add(txtIdPremio, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 94, 198, -1));
         jPanel1.add(txtNumCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 132, 198, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 111, 1040, 190));
+
+        id_cargo.setText("Id_cargo");
+        getContentPane().add(id_cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
+        getContentPane().add(txtIdCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 80, -1));
+
+        id_premio.setText("Premio");
+        getContentPane().add(id_premio, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -98,7 +96,6 @@ public class Cargo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     public javax.swing.JLabel num;
     public javax.swing.JTextField txtIdCargo;
-    public javax.swing.JTextField txtIdPremio;
     public javax.swing.JTextField txtNumCuenta;
     // End of variables declaration//GEN-END:variables
 }

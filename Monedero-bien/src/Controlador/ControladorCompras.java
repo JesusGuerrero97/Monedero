@@ -60,7 +60,7 @@ public class ControladorCompras implements ActionListener, MouseListener {
                String folio="CD"+modelo.cargarCodigo();
                 JOptionPane.showMessageDialog(vista, "Registro insertado exitosamente");
                 vista.compras.setModel(modelo.cargarDatos());
-                if(modelo.agregarTicket(Integer.parseInt(vista.txtIdCompra.getText()),folio,Integer.parseInt(vista.txtTotal.getText())*.15, id_sucursal,1))
+                if(modelo.agregarTicket(Integer.parseInt(vista.txtIdCompra.getText()),folio,Integer.parseInt(vista.txtTotal.getText())*.15, Integer.parseInt(vista.txtIdCompra.getText()),1))
                 {JOptionPane.showMessageDialog(vista, "Ya la hiciste prro");}
                 else{JOptionPane.showMessageDialog(vista, "ah valiste vrg");}
             }

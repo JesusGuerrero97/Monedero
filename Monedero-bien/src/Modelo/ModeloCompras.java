@@ -25,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
 public class ModeloCompras {
     
     
-    private Conexion conexion = new Conexion();
+    private final Conexion conexion = new Conexion();
 
     public boolean agregarCliente(int Id_compra, int total, int numeroCuenta, int id_sucursal,String fecha, int id_emp){
         try
@@ -49,6 +49,7 @@ public class ModeloCompras {
             Connection con = conexion.abrirConexion();
             Statement s = con.createStatement();
             //System.out.println("insert into cliente(Id_cliente, Nombre, Direccion, Telefono, Correo, Num_cuenta, Puntos) values("+id_cliente+",'"+nombre+"', '"+direccion+"', '"+telefono+"', '"+correo+"', "+num_cuenta+", " +puntos+");");
+            System.out.println("insert into ticket(Id_ticket, Folio, Puntos, Id_compra, status) values("+Id_ticket+",'"+Folio+"', "+puntos+", "+id_compra+", "+status+");");
             s.executeUpdate("insert into ticket(Id_ticket, Folio, Puntos, Id_compra, status) values("+Id_ticket+",'"+Folio+"', "+puntos+", "+id_compra+", "+status+");");
             //INSERT INTO `biblioteca`.`libro` (`id_libro`, `nombre`, `autor`, `editorial`, `fecha_pub`, `numpag`, `edicion`, `genero`, `id_sucursal`, `existencia`) VALUES ('30', 'porpoe', 'dngf', 'dskygfs', '1998-02-22', '234', 'efds', 'edff', '3', '15');
             

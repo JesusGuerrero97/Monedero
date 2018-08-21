@@ -34,6 +34,7 @@ public class ControladorMenuPrincipal implements ActionListener {
         menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         menu.setLocationRelativeTo(null);
         menu.setVisible(true);
+        this.menu.btnMovimientos.addActionListener(this);
         //AdmMenu.nombreEmpleado.setText("ID: "+this.idEmp);
         this.menu.btnCliente.addActionListener(this);
         this.menu.btnEmpleado.addActionListener(this);
@@ -82,6 +83,14 @@ public class ControladorMenuPrincipal implements ActionListener {
         }
         else if(this.menu.btnCargo == e.getSource())
         {   
+            
+        }
+        else if(menu.btnMovimientos == e.getSource())
+        {
+            Movimientos mov = new Movimientos();
+            ModeloMovimientos modelo = new ModeloMovimientos();
+            ControladorReportes cont = new ControladorReportes(modelo,mov);  
+            cont.IniciarVista();
             
         }
     }
