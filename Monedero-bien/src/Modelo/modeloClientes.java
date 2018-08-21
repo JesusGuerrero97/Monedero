@@ -45,8 +45,8 @@ public class modeloClientes{
             Connection con = conexion .abrirConexion();
             Statement s = con.createStatement();
            
-            s.executeUpdate("update monedero.cliente set Nombre = '"+nombre+"', Direccion = '"+direccion+"', Telefono = '"+telefono+"', Correo = '"+correo+"', Num_cuenta = '"+num_cuenta+ "', Puntos = '"+puntos+" where Id_cliente = "+id+";");
-
+            s.executeUpdate("UPDATE cliente SET Nombre = '"+nombre+"', Direccion = '"+direccion+"', Telefono = '"+telefono+"', Correo = '"+correo+"' where Id_cliente = "+id+";");
+    
             conexion.cerrarConexion(con);
             return true;
         
@@ -60,7 +60,7 @@ public class modeloClientes{
         {
             Connection con = conexion .abrirConexion();
             Statement s = con.createStatement();
-            s.executeUpdate("delete from cliente where Id_cliente = "+id+"");
+            s.executeUpdate("delete from cliente where Id_cliente="+id+"");
             conexion.cerrarConexion(con);
             return true;
         

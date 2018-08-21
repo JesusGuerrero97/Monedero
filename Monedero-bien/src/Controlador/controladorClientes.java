@@ -23,7 +23,7 @@ import Vista.MenuPrincipal;
 public class controladorClientes implements ActionListener, MouseListener {
     private modeloClientes modelo;
     private Clientes vista;
-    private int libros;
+   
     
     public void transparenciaButton(){
         vista.btnAgregar1.setOpaque(false);
@@ -56,11 +56,7 @@ public controladorClientes(modeloClientes Modelo, Clientes Vista)
         vista.pack();
         vista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vista.setLocationRelativeTo(null);
-        vista.setVisible(true);
-    
-    
-    
-    
+        vista.setVisible(true); 
     vista.clientes.setModel(modelo.cargarDatos());
     
 }
@@ -69,7 +65,7 @@ public controladorClientes(modeloClientes Modelo, Clientes Vista)
     public void actionPerformed(ActionEvent e) {
        if(vista.btnAgregar1 == e.getSource()) {
             
-           if(modelo.agregarCliente(Integer.parseInt(vista.txtIdCliente.getText()), vista.txtNombre.getText(), vista.txtDireccion.getText(), vista.txtTelefono.getText(), vista.txtCorreo.getText(), Integer.parseInt(vista.txtNumCuenta.getText()), Double.parseDouble(vista.txtPuntos.getText()) )){
+           if(modelo.agregarCliente(Integer.parseInt(vista.txtIdCliente.getText()), vista.txtNombre.getText(), vista.txtDireccion.getText(), vista.txtTelefono.getText(), vista.txtCorreo.getText(), Integer.parseInt(vista.txtNumCuenta.getText()), 0 )){
                 limpiar();
                 JOptionPane.showMessageDialog(vista, "Registro insertado exitosamente");
             limpiar();
@@ -80,7 +76,7 @@ public controladorClientes(modeloClientes Modelo, Clientes Vista)
         }
         if(vista.btnEditar == e.getSource()) {
             
-            if(modelo.modificarCliente(Integer.parseInt(vista.txtIdCliente.getText()), vista.txtNombre.getText(), vista.txtDireccion.getText(), vista.txtTelefono.getText(), vista.txtCorreo.getText(), Integer.parseInt(vista.txtNumCuenta.getText()), Double.parseDouble(vista.txtPuntos.getText()))){
+            if(modelo.modificarCliente(Integer.parseInt(vista.txtIdCliente.getText()), vista.txtNombre.getText(), vista.txtDireccion.getText(), vista.txtTelefono.getText(), vista.txtCorreo.getText(), Integer.parseInt(vista.txtNumCuenta.getText()), 0)){
                 limpiar();
                 JOptionPane.showMessageDialog(vista, "Registro editado exitosamente");
             limpiar();
@@ -137,7 +133,7 @@ public controladorClientes(modeloClientes Modelo, Clientes Vista)
                 vista.txtTelefono.setText(String.valueOf(vista.clientes.getValueAt(fila, 3)));
                 vista.txtCorreo.setText(String.valueOf(vista.clientes.getValueAt(fila, 4)));
                 vista.txtNumCuenta.setText(String.valueOf(vista.clientes.getValueAt(fila, 5)));
-                vista.txtPuntos.setText(String.valueOf(vista.clientes.getValueAt(fila, 6)));
+                
             }
         }  //To change body of generated methods, choose Tools | Templates.
     }
@@ -168,7 +164,6 @@ public controladorClientes(modeloClientes Modelo, Clientes Vista)
         vista.txtDireccion.setText("");
         vista.txtIdCliente.setText("");
         vista.txtTelefono.setText("");
-        vista.txtPuntos.setText("");
         vista.txtNumCuenta.setText("");
     }
 }
