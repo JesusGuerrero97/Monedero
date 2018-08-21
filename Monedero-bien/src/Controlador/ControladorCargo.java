@@ -53,7 +53,8 @@ public class ControladorCargo implements ActionListener {
         {
             if(modelo.checarPuntos(Integer.valueOf(vista.txtIdCargo.getText()),id_premio, Integer.valueOf(vista.txtNum_cue.getText()),fecha))
             {
-                JOptionPane.showMessageDialog(null, "se hizo");
+                System.out.println("paso");
+                //JOptionPane.showMessageDialog(null, "");
             }
             else
             {
