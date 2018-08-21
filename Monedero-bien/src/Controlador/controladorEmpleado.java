@@ -35,7 +35,7 @@ public class controladorEmpleado implements ActionListener, MouseListener{
 {       this.modelo = Modelo;
         this.vista = Vista;
         this.vista.empleado.addMouseListener(this);
-        this.vista.btnAgregar1.addActionListener(this); //Aqui
+        this.vista.btnAgregar.addActionListener(this); //Aqui
         this.vista.btnEditar.addActionListener(this);//Aqui
         this.vista.btnCancelar.addActionListener(this);//Aqui
         //this.vista.btnBuscar1.addActionListener(this);
@@ -64,9 +64,9 @@ public class controladorEmpleado implements ActionListener, MouseListener{
         vista.btnRegresar.setOpaque(false);
         vista.btnRegresar.setContentAreaFilled(false);
         vista.btnRegresar.setBorderPainted(false);
-        vista.btnAgregar1.setOpaque(false);
-        vista.btnAgregar1.setContentAreaFilled(false);
-        vista.btnAgregar1.setBorderPainted(false);
+        vista.btnAgregar.setOpaque(false);
+        vista.btnAgregar.setContentAreaFilled(false);
+        vista.btnAgregar.setBorderPainted(false);
         vista.btnCancelar.setOpaque(false);
         vista.btnCancelar.setContentAreaFilled(false);
         vista.btnCancelar.setBorderPainted(false);
@@ -83,7 +83,7 @@ public class controladorEmpleado implements ActionListener, MouseListener{
    
     
     public void actionPerformed(ActionEvent evento){
-        if(vista.btnAgregar1 == evento.getSource()){
+        if(vista.btnAgregar == evento.getSource()){
             int status=1;
             modelo.agregarSucursal(Integer.parseInt(vista.txtIdEmpleado.getText()), vista.txtNombre.getText(),vista.txtDireccion.getText(), vista.txtTelefono.getText(),Integer.parseInt(vista.txtIdSucursal.getText()));
                 
