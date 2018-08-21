@@ -27,7 +27,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         panelbotones = new javax.swing.JPanel();
         btnCliente = new javax.swing.JButton();
         btnEmpleado = new javax.swing.JButton();
@@ -40,34 +39,36 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btnMovimientos = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Menú principal");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, -1, -1));
-
+        panelbotones.setBackground(new java.awt.Color(255, 255, 255));
         panelbotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-cliente-de-empresa-100.png"))); // NOI18N
         btnCliente.setBorder(null);
         btnCliente.setBorderPainted(false);
         btnCliente.setContentAreaFilled(false);
-        panelbotones.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, -1, -1));
+        panelbotones.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, -1, -1));
 
         btnEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-tarjeta-de-empleado-100.png"))); // NOI18N
         btnEmpleado.setBorder(null);
         btnEmpleado.setBorderPainted(false);
         btnEmpleado.setContentAreaFilled(false);
-        panelbotones.add(btnEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, -1, -1));
+        panelbotones.add(btnEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, -1, -1));
 
         btnPremios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-trofeo-100 (2).png"))); // NOI18N
         btnPremios.setBorder(null);
         btnPremios.setBorderPainted(false);
         btnPremios.setContentAreaFilled(false);
-        panelbotones.add(btnPremios, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, -1, -1));
+        panelbotones.add(btnPremios, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 130, -1, -1));
 
-        btnCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-recibo-100.png"))); // NOI18N
+        btnCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-carrito-de-compras-100.png"))); // NOI18N
         btnCompras.setBorder(null);
         btnCompras.setBorderPainted(false);
         btnCompras.setContentAreaFilled(false);
@@ -75,45 +76,87 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnCompras.setDefaultCapable(false);
         btnCompras.setFocusPainted(false);
         btnCompras.setFocusable(false);
-        panelbotones.add(btnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, -1, -1));
+        panelbotones.add(btnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, -1, -1));
 
-        btnAbono.setText("ABONO");
-        panelbotones.add(btnAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, -1, -1));
+        btnAbono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-verificar-100.png"))); // NOI18N
+        btnAbono.setBorder(null);
+        btnAbono.setBorderPainted(false);
+        btnAbono.setContentAreaFilled(false);
+        panelbotones.add(btnAbono, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 290, -1, -1));
 
-        btnCargo.setText("CARGO");
-        panelbotones.add(btnCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, -1, -1));
+        btnCargo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-monedero-100.png"))); // NOI18N
+        btnCargo.setBorder(null);
+        btnCargo.setBorderPainted(false);
+        btnCargo.setContentAreaFilled(false);
+        panelbotones.add(btnCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(0, 102, 102));
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(22, 160, 133));
         jLabel2.setText("Premios");
-        panelbotones.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, -1, -1));
+        panelbotones.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(0, 102, 102));
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(22, 160, 133));
-        jLabel3.setText("Compras");
-        panelbotones.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, -1, 20));
+        jLabel3.setText("Abono");
+        panelbotones.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 390, -1, 20));
 
         jLabel4.setBackground(new java.awt.Color(0, 102, 102));
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(22, 160, 133));
         jLabel4.setText("Clientes");
-        panelbotones.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, -1, -1));
+        panelbotones.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, -1, -1));
 
         jLabel5.setBackground(new java.awt.Color(0, 102, 102));
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(22, 160, 133));
         jLabel5.setText("Empleados");
-        panelbotones.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, -1, -1));
+        panelbotones.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, -1, -1));
 
-        btnMovimientos.setText("Reportes Movimientos");
-        panelbotones.add(btnMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, -1, -1));
+        btnMovimientos.setBackground(new java.awt.Color(22, 155, 125));
+        btnMovimientos.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnMovimientos.setForeground(new java.awt.Color(22, 155, 125));
+        btnMovimientos.setText("Reportes/Movimientos");
+        btnMovimientos.setBorder(null);
+        btnMovimientos.setContentAreaFilled(false);
+        btnMovimientos.setDefaultCapable(false);
+        btnMovimientos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMovimientosActionPerformed(evt);
+            }
+        });
+        panelbotones.add(btnMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, -1, -1));
 
-        getContentPane().add(panelbotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1018, 430));
+        jLabel6.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(22, 160, 133));
+        jLabel6.setText("Compras");
+        panelbotones.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, -1, 20));
+
+        jLabel7.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(22, 160, 133));
+        jLabel7.setText("Cargo");
+        panelbotones.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 390, -1, 20));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel8.setText("Menú principal");
+        panelbotones.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(22, 155, 135));
+        jLabel1.setText("Monedero Electrónico");
+        panelbotones.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
+
+        getContentPane().add(panelbotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1018, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnMovimientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMovimientosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMovimientosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,6 +207,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     public javax.swing.JPanel panelbotones;
     // End of variables declaration//GEN-END:variables
 }
