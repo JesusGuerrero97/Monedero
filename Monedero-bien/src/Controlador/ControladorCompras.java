@@ -33,6 +33,7 @@ public class ControladorCompras implements ActionListener, MouseListener {
     public void iniciarVista(){
         this.vista.btnAgregar1.addActionListener(this);
         this.vista.btnCancelar.addActionListener(this);
+        this.vista.bnRegresar.addActionListener(this);
         modelo.llenarComboEmpleado(vista.cmbEmpleado);
         modelo.llenarComboSucursal(vista.cmbSucursal);
         
