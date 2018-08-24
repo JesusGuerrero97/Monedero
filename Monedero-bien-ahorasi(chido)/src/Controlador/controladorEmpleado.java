@@ -20,7 +20,8 @@ import java.beans.PropertyChangeListener;
 //import vista.Empleados;
 //import modelo.ModeloMenu;
 //
-//import vista.MenuPrincipal;
+import Vista.MenuPrincipal;
+import Modelo.ModeloMenuPrincipal;
 //import modelo.ModSQLInicioSesion;
 import Modelo.modeloEmpleado;
 import Vista.Empleados;
@@ -95,11 +96,11 @@ public class controladorEmpleado implements ActionListener, MouseListener{
                 limpiar();
         }   
         if(vista.btnRegresar == evento.getSource()){
-//            MenuPrincipal obj = new MenuPrincipal();
-//            ModeloMenu modeloMenu = new ModeloMenu();
-//            ControladorMenuPrincipal ControladorMenuPrincipal = new ControladorMenuPrincipal(modeloMenu,obj);
-//            ControladorMenuPrincipal.iniciarVista();
-//            vista.dispose();
+            MenuPrincipal obj = new MenuPrincipal();
+            ModeloMenuPrincipal modeloMenu = new ModeloMenuPrincipal();
+            ControladorMenuPrincipal ControladorMenuPrincipal = new ControladorMenuPrincipal(modeloMenu,obj);
+            ControladorMenuPrincipal.iniciarVista();
+            vista.dispose();
         }
 //        if(vista.btnBuscar1 == evento.getSource()){ 
 //            vista.btnCancelar.setEnabled(true);
