@@ -69,7 +69,7 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
         if(vista.btnAgregar == evento.getSource())
         {
             modelo.agregarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(), Integer.parseInt(vista.txtPuntos.getText()), Integer.parseInt(vista.txtStock.getText()), id_sucursal);
-                
+                //joton
             JOptionPane.showMessageDialog(vista, "Se insertó el registro");
             limpiarVista();
             vista.tablaPremios.setModel(modelo.cargarDatos());
