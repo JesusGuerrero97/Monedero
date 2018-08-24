@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -27,7 +26,7 @@ public class ModeloPremios {
         
          try
         {
-          ResultSet rs = s.executeQuery("SELECT * FROM premios ");
+          ResultSet rs = s.executeQuery("SELECT Id_premio, Descripcion, Stock, Puntos FROM premios ");
           modelo = new DefaultTableModel();
           ResultSetMetaData rsMd = rs.getMetaData();
           int cantidadColumnas = rsMd.getColumnCount();
@@ -63,7 +62,7 @@ public class ModeloPremios {
         
          try
         {
-          ResultSet rs = s.executeQuery("SELECT Id_premio, Descripcion, Stock, Puntos, Id_sucursal FROM premios WHERE Id_premio = "+idPremio+" ;");
+          ResultSet rs = s.executeQuery("SELECT Id_premio, Descripcion, Stock, Puntos FROM premios WHERE Id_premio = "+idPremio+" ;");
           modelo = new DefaultTableModel();
           ResultSetMetaData rsMd = rs.getMetaData();
           int cantidadColumnas = rsMd.getColumnCount();
@@ -90,7 +89,7 @@ public class ModeloPremios {
        return null;
     }
     
-    public void agregarPremio( int vIdPrem, String vDes, int vPuntos, int vStock, int id_sucursal)
+    public void agregarPremio( int vIdPrem, String vDes, int vPuntos, int vStock)
     {
         try
         {
@@ -103,13 +102,12 @@ public class ModeloPremios {
             //Para Ejecutar la consulta
             //Statement s = con.createStatement();
             //JOptionPane.showMessageDialog(null, vConFecha+"---"+vConHora+"---"+vConTipo+"---"+vConNombre+"---"+vConPeso);
-            String query  = "INSERT INTO premios(Id_premio, Descripcion, Stock, Puntos, Id_sucursal) values (?,?,?,?,?)";
+            String query  = "INSERT INTO premios(Id_premio, Descripcion, Stock, Puntos) values (?,?,?,?)";
             PreparedStatement preparedStatement = con.prepareStatement(query);
             preparedStatement.setInt(1,vIdPrem);
             preparedStatement.setString(2,vDes);
             preparedStatement.setInt(3,vPuntos);
             preparedStatement.setInt(4,vStock);
-            preparedStatement.setInt(5,id_sucursal);
             preparedStatement.executeUpdate();
             //JOptionPane.showMessageDialog(null, "Registro agregado");
             /*AQUI HAY UN COMMIT*/
@@ -122,7 +120,7 @@ public class ModeloPremios {
         }
     }
     
-    public boolean editarPremio( int vIdPrem, String vDes, int vPuntos, int vStock, int id_sucursal)
+    public boolean editarPremio( int vIdPrem, String vDes, int vPuntos, int vStock)
     {
         try
         {
@@ -132,8 +130,8 @@ public class ModeloPremios {
             /*AQUI AGREGUE UN AUTOCOMMIT*/
             con.setAutoCommit(false);
             
-            System.out.println("UPDATE premios SET Id_premio ='"+vIdPrem+"', descripcion = '"+vDes+"', Puntos = '"+vPuntos+"', Stock = '"+vStock+"', Id_sucursal "+id_sucursal+" WHERE Id_premio = "+vIdPrem+";");
-            s.executeUpdate("UPDATE premios SET Id_premio ='"+vIdPrem+"', descripcion = '"+vDes+"', Puntos = '"+vPuntos+"', Stock = '"+vStock+"', Id_sucursal "+id_sucursal+" WHERE Id_premio = "+vIdPrem+";");
+            System.out.println("UPDATE premios SET Id_premio ='"+vIdPrem+"', descripcion = '"+vDes+"', Puntos = '"+vPuntos+"', Stock = '"+vStock+"' WHERE Id_premio = "+vIdPrem+";");
+            s.executeUpdate("UPDATE premios SET Id_premio ='"+vIdPrem+"', descripcion = '"+vDes+"', Puntos = '"+vPuntos+"', Stock = '"+vStock+"' WHERE Id_premio = "+vIdPrem+";");
             
             /*AQUI HAY UN COMMIT*/
             con.commit();
@@ -170,60 +168,5 @@ public class ModeloPremios {
             return false;
         }
         
-    }
-    
-    public void llenarComboSucursal(JComboBox<SucursalComboBox> comboSucursal)
-    {
-        try
-        {
-         Connection con = conexion.abrirConexion(1);
-         Statement s = con.createStatement();
-         ResultSet rs=s.executeQuery("SELECT Id_sucursal,Nombre FROM sucursal ORDER BY Nombre");
-         while(rs.next())
-         {
-             comboSucursal.addItem(new SucursalComboBox(rs.getInt("Id_sucursal"),rs.getString("Nombre")));
-         }
-         conexion.cerrarConexion(con);
-        }
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }
-
-    public class SucursalComboBox
-    {
-        private int id_sucursal;
-        private String nombre;
-
-        public SucursalComboBox(int id_sucursal, String  nombre) {
-            this.id_sucursal = id_sucursal;
-            this.nombre = nombre;
-        }
-
-        public int getId_sucursal() {
-            return id_sucursal;
-        }
-
- 
-        public void setId_sucursal(int id_libro) {
-            this.id_sucursal = id_libro;
-        }
-
-        
-        public String getNombre() {
-            return nombre;
-        }
-
-        
-        public void setNombre(String nombre) {
-            this.nombre = nombre;
-        }
-        
-        @Override
-        public String toString()
-        {
-            return nombre;
-        }
     }
 }
