@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
 public class modeloClientes{
     private Conexion conexion = new Conexion();
     
-     public boolean agregarCliente(int id_cliente, String nombre, String direccion, String telefono, String correo, int num_cuenta, double puntos){
+     public boolean agregarCliente(int id_cliente, String nombre, String direccion, String telefono, String correo, int num_cuenta){
         try
         {
             Connection con = conexion.abrirConexion(1);
@@ -29,8 +29,8 @@ public class modeloClientes{
              /*AQUI AGREGUE UN AUTOCOMMIT*/
             con.setAutoCommit(false);
             
-            System.out.println("insert into cliente(Id_cliente, Nombre, Direccion, Telefono, Correo, Num_cuenta, Puntos) values("+id_cliente+",'"+nombre+"', '"+direccion+"', '"+telefono+"', '"+correo+"', "+num_cuenta+", " +puntos+");");
-            s.executeUpdate("insert into cliente(Id_cliente, Nombre, Direccion, Telefono, Correo, Num_cuenta, Puntos) values("+id_cliente+",'"+nombre+"', '"+direccion+"', '"+telefono+"', '"+correo+"', "+num_cuenta+"," +puntos+");");
+            System.out.println("insert into cliente(Id_cliente, Nombre, Direccion, Telefono, Correo, Num_cuenta, Puntos) values("+id_cliente+",'"+nombre+"', '"+direccion+"', '"+telefono+"', '"+correo+"', "+num_cuenta+");");
+            s.executeUpdate("insert into cliente(Id_cliente, Nombre, Direccion, Telefono, Correo, Num_cuenta, Puntos) values("+id_cliente+",'"+nombre+"', '"+direccion+"', '"+telefono+"', '"+correo+"', "+num_cuenta+");");
             //INSERT INTO `biblioteca`.`libro` (`id_libro`, `nombre`, `autor`, `editorial`, `fecha_pub`, `numpag`, `edicion`, `genero`, `id_sucursal`, `existencia`) VALUES ('30', 'porpoe', 'dngf', 'dskygfs', '1998-02-22', '234', 'efds', 'edff', '3', '15');
             
             /*AQUI HAY UN COMMIT*/
@@ -46,7 +46,7 @@ public class modeloClientes{
         }
         
     }
-     public boolean modificarCliente(int id, String nombre, String direccion, String telefono, String correo, int num_cuenta, double puntos){
+     public boolean modificarCliente(int id, String nombre, String direccion, String telefono, String correo, int num_cuenta){
         try
         {
             Connection con = conexion .abrirConexion(1);

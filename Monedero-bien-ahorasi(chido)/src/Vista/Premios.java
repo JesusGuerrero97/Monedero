@@ -120,37 +120,37 @@ public class Premios extends javax.swing.JFrame {
         btnEditar.setBorder(null);
         btnEditar.setBorderPainted(false);
         btnEditar.setContentAreaFilled(false);
-        panelDatos.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 70, 30, -1));
+        panelDatos.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 80, 30, -1));
 
         jLabel12.setBackground(new java.awt.Color(0, 102, 102));
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(22, 160, 133));
         jLabel12.setText("Editar");
-        panelDatos.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 80, -1, -1));
+        panelDatos.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 90, -1, -1));
 
         jLabel13.setBackground(new java.awt.Color(0, 102, 102));
         jLabel13.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(22, 160, 133));
         jLabel13.setText("Eliminar");
-        panelDatos.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 120, -1, -1));
+        panelDatos.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 140, -1, -1));
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-basura-35.png"))); // NOI18N
         btnEliminar.setBorder(null);
         btnEliminar.setBorderPainted(false);
         btnEliminar.setContentAreaFilled(false);
-        panelDatos.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 110, -1, -1));
+        panelDatos.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 130, -1, -1));
 
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-cancelar-35.png"))); // NOI18N
         btnCancelar.setBorder(null);
         btnCancelar.setBorderPainted(false);
         btnCancelar.setContentAreaFilled(false);
-        panelDatos.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 160, 40, -1));
+        panelDatos.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 180, 40, -1));
 
         jLabel14.setBackground(new java.awt.Color(0, 102, 102));
         jLabel14.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(22, 160, 133));
         jLabel14.setText("Cancelar");
-        panelDatos.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 170, -1, -1));
+        panelDatos.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 190, -1, -1));
 
         tablaPremios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -171,7 +171,7 @@ public class Premios extends javax.swing.JFrame {
         panelDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 590, 170));
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
-        jLabel1.setText("Id Sucursal:");
+        jLabel1.setText("  Sucursal:");
         panelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, -1, -1));
 
         panelDatos.add(cmbSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 100, -1));

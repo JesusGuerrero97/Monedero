@@ -52,13 +52,21 @@ public class ControladorCompras implements ActionListener, MouseListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+     if(vista.btnRegresar == e.getSource())
+     {
+          MenuPrincipal obj = new MenuPrincipal();
+          ModeloMenuPrincipal modeloMenu = new ModeloMenuPrincipal();
+          ControladorMenuPrincipal ControladorMenuPrincipal = new ControladorMenuPrincipal (modeloMenu,obj);
+          ControladorMenuPrincipal.iniciarVista();
+          vista.dispose();
+     }
+     
      try
      {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         String fecha= df.format(vista.JDate.getDate());
         int id_empleado = vista.cmbEmpleado.getItemAt(vista.cmbEmpleado.getSelectedIndex()).getId_emp();
         int id_sucursal = vista.cmbSucursal.getItemAt(vista.cmbSucursal.getSelectedIndex()).getId_sucursal();
-        
         if(vista.btnAgregar == e.getSource())
         {
             if(modelo.agregarCliente(Integer.parseInt(vista.txtIdCompra.getText()),Integer.parseInt(vista.txtTotal.getText()) , Integer.parseInt(vista.txtNumeroCuenta.getText()), id_sucursal, fecha, id_empleado))
@@ -70,21 +78,16 @@ public class ControladorCompras implements ActionListener, MouseListener {
                 if(modelo.agregarTicket(Integer.parseInt(vista.txtIdCompra.getText()),folio,puntos, Integer.parseInt(vista.txtIdCompra.getText()),1))
                 {JOptionPane.showMessageDialog(vista, "Tu ticket es: " + folio + "  tus puntos son: " + puntos );}
                 else{JOptionPane.showMessageDialog(vista, "no se registro el folio correctamente");}
+            
             }
-            else { JOptionPane.showMessageDialog(vista, "El registro no pudo ser completado con exito"); }
+            
+        else { JOptionPane.showMessageDialog(vista, "El registro no pudo ser completado con exito"); }
         }
         
         }catch(NullPointerException ex){
                   JOptionPane.showMessageDialog(null, "ERROR: CAMPOS NULOS");
         }
-      if(vista.btnRegresar == e.getSource())
-      {
-            MenuPrincipal obj = new MenuPrincipal();
-            ModeloMenuPrincipal modeloMenu = new ModeloMenuPrincipal();
-            ControladorMenuPrincipal ControladorMenuPrincipal = new ControladorMenuPrincipal (modeloMenu,obj);
-            ControladorMenuPrincipal.iniciarVista();
-            vista.dispose();
-      }
+      
     }
 
     @Override

@@ -65,7 +65,7 @@ public controladorClientes(modeloClientes Modelo, Clientes Vista)
     public void actionPerformed(ActionEvent e) {
        if(vista.btnAgregar1 == e.getSource()) {
             
-           if(modelo.agregarCliente(Integer.parseInt(vista.txtIdCliente.getText()), vista.txtNombre.getText(), vista.txtDireccion.getText(), vista.txtTelefono.getText(), vista.txtCorreo.getText(), Integer.parseInt(vista.txtNumCuenta.getText()), 0 )){
+           if(modelo.agregarCliente(Integer.parseInt(vista.txtIdCliente.getText()), vista.txtNombre.getText(), vista.txtDireccion.getText(), vista.txtTelefono.getText(), vista.txtCorreo.getText(), Integer.parseInt(vista.txtNumCuenta.getText()))){
                 limpiar();
                 JOptionPane.showMessageDialog(vista, "Registro insertado exitosamente");
             limpiar();
@@ -76,7 +76,7 @@ public controladorClientes(modeloClientes Modelo, Clientes Vista)
         }
         if(vista.btnEditar == e.getSource()) {
             
-            if(modelo.modificarCliente(Integer.parseInt(vista.txtIdCliente.getText()), vista.txtNombre.getText(), vista.txtDireccion.getText(), vista.txtTelefono.getText(), vista.txtCorreo.getText(), Integer.parseInt(vista.txtNumCuenta.getText()), 0)){
+            if(modelo.modificarCliente(Integer.parseInt(vista.txtIdCliente.getText()), vista.txtNombre.getText(), vista.txtDireccion.getText(), vista.txtTelefono.getText(), vista.txtCorreo.getText(), Integer.parseInt(vista.txtNumCuenta.getText()))){
                 limpiar();
                 JOptionPane.showMessageDialog(vista, "Registro editado exitosamente");
             limpiar();
