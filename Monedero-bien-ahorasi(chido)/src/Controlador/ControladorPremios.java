@@ -18,6 +18,7 @@ import javax.swing.event.ChangeListener;
 
 import Modelo.ModeloPremios;
 import Vista.MenuPrincipal;
+
 import Vista.Premios;
 import Controlador.ControladorMenuPrincipal;
 import Modelo.ModeloMenuPrincipal;
@@ -46,7 +47,7 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
         vista.setLocationRelativeTo(null);
         vista.setAlwaysOnTop( false );vista.dispose();
         vista.setVisible(true);
-        
+        modelo.llenarComboSucursal(vista.cmbSucursal);
         vista.setResizable(false);
         vista.setTitle("PREMIOS");
         vista.tablaPremios.setModel(modelo.cargarDatos());
@@ -64,9 +65,10 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
     public void actionPerformed(ActionEvent evento) {
      try
      {
+            int id_sucursal = vista.cmbSucursal.getItemAt(vista.cmbSucursal.getSelectedIndex()).getId_sucursal();
         if(vista.btnAgregar == evento.getSource())
         {
-            modelo.agregarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(), Integer.parseInt(vista.txtPuntos.getText()), Integer.parseInt(vista.txtStock.getText()));
+            modelo.agregarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(), Integer.parseInt(vista.txtPuntos.getText()), Integer.parseInt(vista.txtStock.getText()), id_sucursal);
                 
             JOptionPane.showMessageDialog(vista, "Se insertó el registro");
             limpiarVista();
@@ -89,7 +91,7 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
            // JOptionPane.showMessageDialog(null, "Registro consultado exitosamente");
         }
         if(vista.btnEditar == evento.getSource()){
-            modelo.editarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(),Integer.parseInt(vista.txtPuntos.getText()),Integer.parseInt(vista.txtStock.getText()));
+            modelo.editarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(),Integer.parseInt(vista.txtPuntos.getText()),Integer.parseInt(vista.txtStock.getText()),id_sucursal);
             vista.tablaPremios.setModel(modelo.cargarDatos());
             limpiarVista();
         }
@@ -116,6 +118,7 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
 
     @Override
     public void mouseClicked(MouseEvent e) {
+                
             if(vista.tablaPremios== e.getSource()){
             int fila=vista.tablaPremios.rowAtPoint(e.getPoint());
             if(fila > -1)
@@ -124,6 +127,7 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
                 vista.txtDescrip.setText(String.valueOf(vista.tablaPremios.getValueAt(fila, 1)));
                 vista.txtStock.setText(String.valueOf(vista.tablaPremios.getValueAt(fila, 2)));
                 vista.txtPuntos.setText(String.valueOf(vista.tablaPremios.getValueAt(fila, 3)));
+                vista.cmbSucursal.setToolTipText(String.valueOf(vista.tablaPremios.getValueAt(fila, 4)));
             }
         }
     }
