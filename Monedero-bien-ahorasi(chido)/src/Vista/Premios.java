@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Vista;
-
+import Modelo.ModeloPremios.SucursalComboBox;
 /**
  *
  * @author 8a
@@ -46,6 +46,8 @@ public class Premios extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaPremios = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        cmbSucursal = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
@@ -155,7 +157,7 @@ public class Premios extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id_premio", "Descripción", "Stock", "Puntos"
+                "Id_premio", "Descripción", "Stock", "Puntos", "Id_Sucursal"
             }
         ));
         tablaPremios.setSurrendersFocusOnKeystroke(true);
@@ -167,6 +169,12 @@ public class Premios extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tablaPremios);
 
         panelDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 590, 170));
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
+        jLabel1.setText("Id Sucursal:");
+        panelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, -1, -1));
+
+        panelDatos.add(cmbSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 100, -1));
 
         getContentPane().add(panelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1050, 460));
 
@@ -268,6 +276,8 @@ public class Premios extends javax.swing.JFrame {
     public javax.swing.JButton btnEditar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnRegresar;
+    public javax.swing.JComboBox<SucursalComboBox> cmbSucursal;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
