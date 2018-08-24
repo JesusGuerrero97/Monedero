@@ -66,7 +66,7 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
      {
         if(vista.btnAgregar == evento.getSource())
         {
-            modelo.agregarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(), Integer.parseInt(vista.txtStock.getText()), Integer.parseInt(vista.txtStock.getText()));
+            modelo.agregarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(), Integer.parseInt(vista.txtPuntos.getText()), Integer.parseInt(vista.txtStock.getText()));
                 
             JOptionPane.showMessageDialog(vista, "Se insertó el registro");
             limpiarVista();
@@ -89,7 +89,7 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
            // JOptionPane.showMessageDialog(null, "Registro consultado exitosamente");
         }
         if(vista.btnEditar == evento.getSource()){
-            modelo.editarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(),Integer.parseInt(vista.txtStock.getText()),Integer.parseInt(vista.txtStock.getText()));
+            modelo.editarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(),Integer.parseInt(vista.txtPuntos.getText()),Integer.parseInt(vista.txtStock.getText()));
             vista.tablaPremios.setModel(modelo.cargarDatos());
             limpiarVista();
         }

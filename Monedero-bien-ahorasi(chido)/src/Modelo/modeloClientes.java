@@ -23,7 +23,7 @@ public class modeloClientes{
      public boolean agregarCliente(int id_cliente, String nombre, String direccion, String telefono, String correo, int num_cuenta, double puntos){
         try
         {
-            Connection con = conexion.abrirConexion();
+            Connection con = conexion.abrirConexion(1);
             Statement s = con.createStatement();
             
              /*AQUI AGREGUE UN AUTOCOMMIT*/
@@ -49,7 +49,7 @@ public class modeloClientes{
      public boolean modificarCliente(int id, String nombre, String direccion, String telefono, String correo, int num_cuenta, double puntos){
         try
         {
-            Connection con = conexion .abrirConexion();
+            Connection con = conexion .abrirConexion(1);
             Statement s = con.createStatement();
            
              /*AQUI AGREGUE UN AUTOCOMMIT*/
@@ -71,7 +71,7 @@ public class modeloClientes{
         public boolean deleteCliente(int id){
         try
         {
-            Connection con = conexion .abrirConexion();
+            Connection con = conexion .abrirConexion(1);
             Statement s = con.createStatement();
             
              /*AQUI AGREGUE UN AUTOCOMMIT*/
@@ -92,7 +92,7 @@ public class modeloClientes{
         public DefaultTableModel cargarDatos(){
         try
        {
-         Connection con = conexion.abrirConexion();
+         Connection con = conexion.abrirConexion(1);
          Statement s = con.createStatement();
          DefaultTableModel modelo;
         
@@ -128,7 +128,7 @@ public class modeloClientes{
     public DefaultTableModel buscarDatos(int id){
         try
        {
-         Connection con = conexion.abrirConexion();
+         Connection con = conexion.abrirConexion(1);
          Statement s = con.createStatement();
          DefaultTableModel modelo;
         

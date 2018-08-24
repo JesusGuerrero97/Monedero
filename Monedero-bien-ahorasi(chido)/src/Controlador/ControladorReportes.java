@@ -65,7 +65,7 @@ public class ControladorReportes implements ActionListener{
      int id_cliente = vista.cmbCliente.getItemAt(vista.cmbCliente.getSelectedIndex()).getId_cliente();
            try {
                 Conexion con = new Conexion();
-                Connection conn= con.abrirConexion();
+                Connection conn= con.abrirConexion(1);
                 JasperReport reporte = null;
                 String path = "src\\Reportes\\Movimientos.jasper";
                 
@@ -92,7 +92,7 @@ public class ControladorReportes implements ActionListener{
         int id_cliente = vista.cmbCliente.getItemAt(vista.cmbCliente.getSelectedIndex()).getId_cliente();
            try {
                 Conexion con = new Conexion();
-                Connection conn= con.abrirConexion();
+                Connection conn= con.abrirConexion(1);
                 JasperReport reporte = null;
                 String path = "src\\Reportes\\ReporteSaldo.jasper";
                 

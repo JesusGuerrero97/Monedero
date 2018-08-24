@@ -21,8 +21,9 @@ public class Conexion {
                 DriverManager.registerDriver(new com.mysql.jdbc.Driver());
                 System.out.println("IP intentada global: "+PoseElValor.name);
                 con = DriverManager.getConnection(
-                "jdbc:mysql://"+PoseElValor.name+":3306/monedero","usuario0","123456");
-                //"jdbc:mysql://localhost:3306/monedero","root","");
+                
+                //"jdbc:mysql://"+PoseElValor.name+":3306/monedero","usuario0","123456");
+                "jdbc:mysql://localhost:3306/monedero","root","");
             }
             catch(SQLException e1)
             {
@@ -73,8 +74,8 @@ public class Conexion {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
             System.out.println("IP intentada:"+ipA);
             con = DriverManager.getConnection(
-            "jdbc:mysql://"+ipA+":3306/monedero","usuario0","123456");//si fuera host no local ps pones la ip,, despues de los : es el puerto            
-            //"jdbc:mysql://localhost:3306/biblioteca","root","");
+            //"jdbc:mysql://"+ipA+":3306/monedero","usuario0","123456");//si fuera host no local ps pones la ip,, despues de los : es el puerto            
+            "jdbc:mysql://localhost:3306/monedero","root","");
             PoseElValor.name = ipA;
         }
         catch(SQLException e1)

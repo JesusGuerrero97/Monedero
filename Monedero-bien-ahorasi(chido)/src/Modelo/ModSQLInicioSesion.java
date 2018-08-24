@@ -24,7 +24,7 @@ public class ModSQLInicioSesion {
         
         int result = -1;
         try{
-            Connection con = conexion.abrirConexion();
+            Connection con = conexion.abrirConexion(1);
             if(con!=null){
                 Statement s = con.createStatement();
                 ResultSet rs = s.executeQuery("SELECT * FROM login where usuario='"+user+"' AND contraseña='"+pass+"'");

@@ -24,7 +24,7 @@ public class ModeloCarga {
     {
         try
         {
-         Connection con = conexion.abrirConexion();
+         Connection con = conexion.abrirConexion(1);
          Statement s = con.createStatement();
          ResultSet rs=s.executeQuery("SELECT Id_premio,Descripcion FROM premios where Stock!=0 ORDER BY Descripcion");
          while(rs.next())
@@ -82,7 +82,7 @@ public class ModeloCarga {
         String C="Cargo";
          try
         {
-            Connection con = conexion.abrirConexion();
+            Connection con = conexion.abrirConexion(1);
             Statement s = con.createStatement();
             /*AQUI AGREGUE UN AUTOCOMMIT*/
             con.setAutoCommit(false);

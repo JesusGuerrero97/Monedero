@@ -30,7 +30,7 @@ public class ModeloCompras {
     public boolean agregarCliente(int Id_compra, int total, int numeroCuenta, int id_sucursal,String fecha, int id_emp){
         try
         {
-            Connection con = conexion.abrirConexion();
+            Connection con = conexion.abrirConexion(1);
             Statement s = con.createStatement();
             /*AQUI AGREGUE UN AUTOCOMMIT*/
             con.setAutoCommit(false);
@@ -49,7 +49,7 @@ public class ModeloCompras {
     public boolean agregarTicket(int Id_ticket,String Folio, double puntos, int id_compra,int status){
         try
         {
-            Connection con = conexion.abrirConexion();
+            Connection con = conexion.abrirConexion(1);
             Statement s = con.createStatement();
             /*AQUI AGREGUE UN AUTOCOMMIT*/
             con.setAutoCommit(false);
@@ -69,7 +69,7 @@ public class ModeloCompras {
     public DefaultTableModel cargarDatos(){
         try
        {
-         Connection con = conexion.abrirConexion();
+         Connection con = conexion.abrirConexion(1);
          Statement s = con.createStatement();
          DefaultTableModel modelo;
         
@@ -109,7 +109,7 @@ public class ModeloCompras {
     {
         try
         {
-         Connection con = conexion.abrirConexion();
+         Connection con = conexion.abrirConexion(1);
          Statement s = con.createStatement();
          ResultSet rs=s.executeQuery("SELECT Id_sucursal,Nombre FROM sucursal ORDER BY Nombre");
          while(rs.next())
@@ -164,7 +164,7 @@ public class ModeloCompras {
     {
         try
         {
-         Connection con = conexion.abrirConexion();
+         Connection con = conexion.abrirConexion(1);
          Statement s = con.createStatement();
          ResultSet rs=s.executeQuery("SELECT Id_empleado,Nombre FROM empleado ORDER BY Nombre");
          while(rs.next())
@@ -218,7 +218,7 @@ public class ModeloCompras {
     {
         String codigo="";
         try {
-            Connection con = conexion.abrirConexion();
+            Connection con = conexion.abrirConexion(1);
             Statement s = con.createStatement();
             int j;
             String num="";

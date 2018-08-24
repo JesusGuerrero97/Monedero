@@ -26,7 +26,7 @@ public class modeloEmpleado {
     public DefaultTableModel cargarDatos(){
         try
        {
-         Connection con = conexion.abrirConexion();
+         Connection con = conexion.abrirConexion(1);
          Statement s = con.createStatement();
          DefaultTableModel modelo;
         
@@ -62,7 +62,7 @@ public class modeloEmpleado {
     public DefaultTableModel buscarDatos(int idEmpleado){
         try
        {
-         Connection con = conexion.abrirConexion();
+         Connection con = conexion.abrirConexion(1);
          Statement s = con.createStatement();
          DefaultTableModel modelo;
         
@@ -99,7 +99,7 @@ public class modeloEmpleado {
     {
         try
         {
-            Connection con = conexion.abrirConexion();
+            Connection con = conexion.abrirConexion(1);
              /*AQUI AGREGUE UN AUTOCOMMIT*/
             con.setAutoCommit(false);
             String query  = "INSERT INTO empleado( Id_empleado, Nombre, Direccion, Telefono, Id_Sucursal) values (?,?,?,?,?)";
@@ -126,7 +126,7 @@ public class modeloEmpleado {
     { 
         try
         {
-            Connection con = conexion .abrirConexion();
+            Connection con = conexion .abrirConexion(1);
             Statement s = con.createStatement();
             
              /*AQUI AGREGUE UN AUTOCOMMIT*/
@@ -149,7 +149,7 @@ public class modeloEmpleado {
     { 
         try
         {
-            Connection con = conexion.abrirConexion();
+            Connection con = conexion.abrirConexion(1);
             Statement s = con.createStatement();
             
             /*AQUI AGREGUE UN AUTOCOMMIT*/

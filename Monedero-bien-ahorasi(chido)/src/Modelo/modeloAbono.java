@@ -23,7 +23,7 @@ public class modeloAbono {
     {
         try
         {
-         Connection con = conexion.abrirConexion();
+         Connection con = conexion.abrirConexion(1);
          Statement s = con.createStatement();
          ResultSet rs=s.executeQuery("SELECT Id_ticket,Folio FROM ticket where status!=2 ORDER BY Folio");
          while(rs.next())
@@ -80,7 +80,7 @@ public class modeloAbono {
         String C="Abono";
          try
         {
-            Connection con = conexion.abrirConexion();
+            Connection con = conexion.abrirConexion(1);
             Statement s = con.createStatement();
             
              /*AQUI AGREGUE UN AUTOCOMMIT*/

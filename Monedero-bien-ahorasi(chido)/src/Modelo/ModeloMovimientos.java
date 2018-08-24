@@ -24,7 +24,7 @@ public class ModeloMovimientos {
     {
         try
         {
-         Connection con = conexion.abrirConexion();
+         Connection con = conexion.abrirConexion(1);
          Statement s = con.createStatement();
          ResultSet rs=s.executeQuery("SELECT Id_cliente,Nombre FROM cliente ORDER BY Nombre");
          while(rs.next())

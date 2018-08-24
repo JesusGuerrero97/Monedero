@@ -20,7 +20,7 @@ public class ModeloPremios {
     public DefaultTableModel cargarDatos(){
         try
        {
-         Connection con = conexion.abrirConexion();
+         Connection con = conexion.abrirConexion(1);
          Statement s = con.createStatement();
          DefaultTableModel modelo;
         
@@ -56,7 +56,7 @@ public class ModeloPremios {
     public DefaultTableModel buscarDatos(int idPremio){
         try
        {
-         Connection con = conexion.abrirConexion();
+         Connection con = conexion.abrirConexion(1);
          Statement s = con.createStatement();
          DefaultTableModel modelo;
         
@@ -94,7 +94,7 @@ public class ModeloPremios {
         try
         {
             //Para abrir una conxion a la BD
-            Connection con = conexion.abrirConexion();
+            Connection con = conexion.abrirConexion(1);
             
             /*AQUI AGREGUE UN AUTOCOMMIT*/
             con.setAutoCommit(false);
@@ -124,7 +124,7 @@ public class ModeloPremios {
     {
         try
         {
-            Connection con = conexion .abrirConexion();
+            Connection con = conexion .abrirConexion(1);
             Statement s = con.createStatement();
            
             /*AQUI AGREGUE UN AUTOCOMMIT*/
@@ -148,7 +148,7 @@ public class ModeloPremios {
     { 
         try
         {
-            Connection con = conexion.abrirConexion();
+            Connection con = conexion.abrirConexion(1);
             Statement s = con.createStatement();
            
             /*AQUI AGREGUE UN AUTOCOMMIT*/
