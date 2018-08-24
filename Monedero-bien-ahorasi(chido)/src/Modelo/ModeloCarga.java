@@ -26,7 +26,8 @@ public class ModeloCarga {
         {
          Connection con = conexion.abrirConexion(1);
          Statement s = con.createStatement();
-         ResultSet rs=s.executeQuery("SELECT Id_premio,Descripcion FROM premios where Stock!=0 ORDER BY Descripcion");
+         // EN EL WHERE DEBES PONER TU SUC PARA QUE SOLO SALGAN LOS PREMIOS DE TU SUC
+         ResultSet rs=s.executeQuery("SELECT Id_premio,Descripcion FROM premios where Stock!=0 and Id_sucursal=1 ORDER BY Descripcion");
          while(rs.next())
          {
              comboPremios.addItem(new PremiosComboBox(rs.getInt("Id_premio"),rs.getString("Descripcion")));

@@ -36,8 +36,6 @@ public class Movimientos extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         btnGenerar.setBackground(new java.awt.Color(22, 155, 125));
         btnGenerar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnGenerar.setForeground(new java.awt.Color(22, 155, 125));
@@ -117,7 +115,7 @@ public class Movimientos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGenerar)
                     .addComponent(btnSaldo))
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         pack();

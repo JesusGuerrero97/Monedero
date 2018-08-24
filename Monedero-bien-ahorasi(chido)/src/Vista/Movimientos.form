@@ -49,7 +49,7 @@
                   <Component id="btnGenerar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnSaldo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="116" max="32767" attributes="0"/>
+              <EmptySpace pref="68" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
