@@ -72,28 +72,28 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
             limpiarVista();
             vista.tablaPremios.setModel(modelo.cargarDatos());
         }                
-        if(vista.btnCancelar == evento.getSource()){
+        else if(vista.btnCancelar == evento.getSource()){
                 limpiarVista();
         }   
-        if(vista.btnRegresar == evento.getSource()){
+        else if(vista.btnRegresar == evento.getSource()){
             MenuPrincipal obj = new MenuPrincipal();
             ModeloMenuPrincipal modeloMenu = new ModeloMenuPrincipal();
             ControladorMenuPrincipal ControladorMenuPrincipal = new ControladorMenuPrincipal (modeloMenu,obj);
             ControladorMenuPrincipal.iniciarVista();
             vista.dispose();
         }
-        if(vista.btnCancelar == evento.getSource()){ 
+        else if(vista.btnCancelar == evento.getSource()){ 
             vista.btnCancelar.setEnabled(true);
             int idPremio = Integer.parseInt(vista.txtIdPremio.getText());
             vista.tablaPremios.setModel(modelo.buscarDatos( idPremio));          
            // JOptionPane.showMessageDialog(null, "Registro consultado exitosamente");
         }
-        if(vista.btnEditar == evento.getSource()){
+        else if(vista.btnEditar == evento.getSource()){
             modelo.editarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(),Integer.parseInt(vista.txtPuntos.getText()),Integer.parseInt(vista.txtStock.getText()));
             vista.tablaPremios.setModel(modelo.cargarDatos());
             limpiarVista();
         }
-        if(vista.btnEliminar == evento.getSource()){
+        else if(vista.btnEliminar == evento.getSource()){
             if(modelo.eliminarPremio(Integer.parseInt(vista.txtIdPremio.getText()))){
                 JOptionPane.showMessageDialog(null, "Registro eliminado");
                 limpiarVista();

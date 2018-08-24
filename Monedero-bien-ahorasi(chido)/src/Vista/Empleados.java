@@ -127,53 +127,53 @@ public class Empleados extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 51));
         jLabel3.setText("Nombre:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, -1));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 51));
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 51));
         jLabel4.setText("Dirección:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 51));
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 51));
         jLabel5.setText("Teléfono:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, -1, -1));
 
         jLabel7.setBackground(new java.awt.Color(0, 0, 51));
         jLabel7.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 51));
         jLabel7.setText("Id_sucursal:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, -1, -1));
 
         txtIdSucursal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdSucursalActionPerformed(evt);
             }
         });
-        jPanel2.add(txtIdSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 350, -1));
+        jPanel2.add(txtIdSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 350, -1));
 
         txtTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelefonoActionPerformed(evt);
             }
         });
-        jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 350, -1));
+        jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 350, -1));
 
         txtDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDireccionActionPerformed(evt);
             }
         });
-        jPanel2.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 350, -1));
+        jPanel2.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 350, -1));
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
             }
         });
-        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 350, -1));
+        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 350, -1));
 
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-más-35.png"))); // NOI18N
         btnAgregar.setBorder(null);
@@ -191,37 +191,37 @@ public class Empleados extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(22, 160, 133));
         jLabel12.setText("Editar");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 80, -1, -1));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 90, -1, -1));
 
         btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-lápiz-35.png"))); // NOI18N
         btnEditar.setBorder(null);
         btnEditar.setBorderPainted(false);
         btnEditar.setContentAreaFilled(false);
-        jPanel2.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 70, 30, -1));
+        jPanel2.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 80, 30, -1));
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-basura-35.png"))); // NOI18N
         btnEliminar.setBorder(null);
         btnEliminar.setBorderPainted(false);
         btnEliminar.setContentAreaFilled(false);
-        jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 110, -1, -1));
+        jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 130, -1, -1));
 
         jLabel13.setBackground(new java.awt.Color(0, 102, 102));
         jLabel13.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(22, 160, 133));
         jLabel13.setText("Eliminar");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 120, -1, -1));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, -1, -1));
 
         jLabel14.setBackground(new java.awt.Color(0, 102, 102));
         jLabel14.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(22, 160, 133));
         jLabel14.setText("Cancelar");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 160, -1, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 200, -1, -1));
 
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/icons8-cancelar-35.png"))); // NOI18N
         btnCancelar.setBorder(null);
         btnCancelar.setBorderPainted(false);
         btnCancelar.setContentAreaFilled(false);
-        jPanel2.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 150, 30, -1));
+        jPanel2.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 190, 30, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

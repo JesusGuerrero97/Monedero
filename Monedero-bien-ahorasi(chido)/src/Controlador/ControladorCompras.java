@@ -11,7 +11,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import Modelo.ModeloCompras;
+import Modelo.ModeloMenuPrincipal;
 import Vista.Compras;
+import Vista.MenuPrincipal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import javax.swing.JFrame;
@@ -33,6 +35,7 @@ public class ControladorCompras implements ActionListener, MouseListener {
     public void iniciarVista(){
         this.vista.btnAgregar.addActionListener(this);
         this.vista.btnCancelar1.addActionListener(this);
+        this.vista.btnRegresar.addActionListener(this);
         modelo.llenarComboEmpleado(vista.cmbEmpleado);
         modelo.llenarComboSucursal(vista.cmbSucursal);
         
@@ -61,17 +64,27 @@ public class ControladorCompras implements ActionListener, MouseListener {
             if(modelo.agregarCliente(Integer.parseInt(vista.txtIdCompra.getText()),Integer.parseInt(vista.txtTotal.getText()) , Integer.parseInt(vista.txtNumeroCuenta.getText()), id_sucursal, fecha, id_empleado))
             {
                String folio="CD"+modelo.cargarCodigo();
+               double puntos=Double.parseDouble(vista.txtTotal.getText())*.15;
                 JOptionPane.showMessageDialog(vista, "Registro insertado exitosamente");
                 vista.compras.setModel(modelo.cargarDatos());
-                if(modelo.agregarTicket(Integer.parseInt(vista.txtIdCompra.getText()),folio,Integer.parseInt(vista.txtTotal.getText())*.15, Integer.parseInt(vista.txtIdCompra.getText()),1))
-                {JOptionPane.showMessageDialog(vista, "Ya la hiciste prro");}
-                else{JOptionPane.showMessageDialog(vista, "ah valiste vrg");}
+                if(modelo.agregarTicket(Integer.parseInt(vista.txtIdCompra.getText()),folio,puntos, Integer.parseInt(vista.txtIdCompra.getText()),1))
+                {JOptionPane.showMessageDialog(vista, "Tu ticket es: " + folio + "  tus puntos son: " + puntos );}
+                else{JOptionPane.showMessageDialog(vista, "no se registro el folio correctamente");}
             }
             else { JOptionPane.showMessageDialog(vista, "El registro no pudo ser completado con exito"); }
         }
-      }catch(NullPointerException ex){
-                JOptionPane.showMessageDialog(null, "ERROR: CAMPOS NULOS");
-      }    
+        
+        }catch(NullPointerException ex){
+                  JOptionPane.showMessageDialog(null, "ERROR: CAMPOS NULOS");
+        }
+      if(vista.btnRegresar == e.getSource())
+      {
+            MenuPrincipal obj = new MenuPrincipal();
+            ModeloMenuPrincipal modeloMenu = new ModeloMenuPrincipal();
+            ControladorMenuPrincipal ControladorMenuPrincipal = new ControladorMenuPrincipal (modeloMenu,obj);
+            ControladorMenuPrincipal.iniciarVista();
+            vista.dispose();
+      }
     }
 
     @Override
