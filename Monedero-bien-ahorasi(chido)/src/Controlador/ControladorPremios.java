@@ -18,7 +18,6 @@ import javax.swing.event.ChangeListener;
 
 import Modelo.ModeloPremios;
 import Vista.MenuPrincipal;
-
 import Vista.Premios;
 import Controlador.ControladorMenuPrincipal;
 import Modelo.ModeloMenuPrincipal;
@@ -47,7 +46,7 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
         vista.setLocationRelativeTo(null);
         vista.setAlwaysOnTop( false );vista.dispose();
         vista.setVisible(true);
-        modelo.llenarComboSucursal(vista.cmbSucursal);
+        
         vista.setResizable(false);
         vista.setTitle("PREMIOS");
         vista.tablaPremios.setModel(modelo.cargarDatos());
@@ -65,37 +64,41 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
     public void actionPerformed(ActionEvent evento) {
      try
      {
-            int id_sucursal = vista.cmbSucursal.getItemAt(vista.cmbSucursal.getSelectedIndex()).getId_sucursal();
         if(vista.btnAgregar == evento.getSource())
         {
+<<<<<<< HEAD
             modelo.agregarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(), Integer.parseInt(vista.txtPuntos.getText()), Integer.parseInt(vista.txtStock.getText()), id_sucursal);
                 //joton
+=======
+            modelo.agregarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(), Integer.parseInt(vista.txtPuntos.getText()), Integer.parseInt(vista.txtStock.getText()));
+                
+>>>>>>> db7835e3e4607c0f8c596a8bec64e8ed40d85efd
             JOptionPane.showMessageDialog(vista, "Se insertó el registro");
             limpiarVista();
             vista.tablaPremios.setModel(modelo.cargarDatos());
         }                
-        if(vista.btnCancelar == evento.getSource()){
+        else if(vista.btnCancelar == evento.getSource()){
                 limpiarVista();
         }   
-        if(vista.btnRegresar == evento.getSource()){
+        else if(vista.btnRegresar == evento.getSource()){
             MenuPrincipal obj = new MenuPrincipal();
             ModeloMenuPrincipal modeloMenu = new ModeloMenuPrincipal();
             ControladorMenuPrincipal ControladorMenuPrincipal = new ControladorMenuPrincipal (modeloMenu,obj);
             ControladorMenuPrincipal.iniciarVista();
             vista.dispose();
         }
-        if(vista.btnCancelar == evento.getSource()){ 
+        else if(vista.btnCancelar == evento.getSource()){ 
             vista.btnCancelar.setEnabled(true);
             int idPremio = Integer.parseInt(vista.txtIdPremio.getText());
             vista.tablaPremios.setModel(modelo.buscarDatos( idPremio));          
            // JOptionPane.showMessageDialog(null, "Registro consultado exitosamente");
         }
-        if(vista.btnEditar == evento.getSource()){
-            modelo.editarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(),Integer.parseInt(vista.txtPuntos.getText()),Integer.parseInt(vista.txtStock.getText()),id_sucursal);
+        else if(vista.btnEditar == evento.getSource()){
+            modelo.editarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(),Integer.parseInt(vista.txtPuntos.getText()),Integer.parseInt(vista.txtStock.getText()));
             vista.tablaPremios.setModel(modelo.cargarDatos());
             limpiarVista();
         }
-        if(vista.btnEliminar == evento.getSource()){
+        else if(vista.btnEliminar == evento.getSource()){
             if(modelo.eliminarPremio(Integer.parseInt(vista.txtIdPremio.getText()))){
                 JOptionPane.showMessageDialog(null, "Registro eliminado");
                 limpiarVista();
@@ -118,7 +121,6 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
 
     @Override
     public void mouseClicked(MouseEvent e) {
-                
             if(vista.tablaPremios== e.getSource()){
             int fila=vista.tablaPremios.rowAtPoint(e.getPoint());
             if(fila > -1)
@@ -127,7 +129,6 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
                 vista.txtDescrip.setText(String.valueOf(vista.tablaPremios.getValueAt(fila, 1)));
                 vista.txtStock.setText(String.valueOf(vista.tablaPremios.getValueAt(fila, 2)));
                 vista.txtPuntos.setText(String.valueOf(vista.tablaPremios.getValueAt(fila, 3)));
-                vista.cmbSucursal.setToolTipText(String.valueOf(vista.tablaPremios.getValueAt(fila, 4)));
             }
         }
     }
