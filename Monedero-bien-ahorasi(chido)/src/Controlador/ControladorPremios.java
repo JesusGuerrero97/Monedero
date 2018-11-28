@@ -78,33 +78,37 @@ class ControladorPremios implements ActionListener, PropertyChangeListener, Chan
                 JOptionPane.showMessageDialog(vista, "Formatos nulos");
             }
         }                
-        if(vista.btnCancelar == evento.getSource()){
+        else if(vista.btnCancelar == evento.getSource()){
                 limpiarVista();
         }   
-        if(vista.btnRegresar == evento.getSource()){
+        else if(vista.btnRegresar == evento.getSource()){
             MenuPrincipal obj = new MenuPrincipal();
             ModeloMenuPrincipal modeloMenu = new ModeloMenuPrincipal();
             ControladorMenuPrincipal ControladorMenuPrincipal = new ControladorMenuPrincipal (modeloMenu,obj);
             ControladorMenuPrincipal.iniciarVista();
             vista.dispose();
         }
-        if(vista.btnCancelar == evento.getSource()){ 
+        else if(vista.btnCancelar == evento.getSource()){ 
             vista.btnCancelar.setEnabled(true);
             int idPremio = Integer.parseInt(vista.txtIdPremio.getText());
             vista.tablaPremios.setModel(modelo.buscarDatos( idPremio));          
            // JOptionPane.showMessageDialog(null, "Registro consultado exitosamente");
         }
-        if(vista.btnEditar == evento.getSource()){
+        else if(vista.btnEditar == evento.getSource()){
+            System.out.println("ENTRO");
             try
-            {
-                modelo.editarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(),Integer.parseInt(vista.txtPuntos.getText()),Integer.parseInt(vista.txtStock.getText()),id_sucursal);
+            {   
+                System.out.println("entro2");
+                modelo.editarPremio(Integer.parseInt(vista.txtIdPremio.getText()), vista.txtDescrip.getText(),Double.parseDouble(vista.txtPuntos.getText()),Integer.parseInt(vista.txtStock.getText()),id_sucursal);
+                System.out.println("se pudo");
                 vista.tablaPremios.setModel(modelo.cargarDatos());
                 limpiarVista();
             }catch(NumberFormatException ec){
-                JOptionPane.showMessageDialog(vista, "Formatos nulos");
+                System.out.println("no entres");
+                JOptionPane.showMessageDialog(vista, "Registro editado correctamente");
             }
         }
-        if(vista.btnEliminar == evento.getSource()){
+        else if(vista.btnEliminar == evento.getSource()){
             if(modelo.eliminarPremio(Integer.parseInt(vista.txtIdPremio.getText()))){
                 JOptionPane.showMessageDialog(null, "Registro eliminado");
                 limpiarVista();

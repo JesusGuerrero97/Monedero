@@ -122,7 +122,7 @@ public class ModeloPremios {
         }
     }
     
-    public boolean editarPremio( int vIdPrem, String vDes, int vPuntos, int vStock, int id_sucursal)
+    public boolean editarPremio( int vIdPrem, String vDes, double vPuntos, int vStock, int id_sucursal)
     {
         try
         {
@@ -132,8 +132,8 @@ public class ModeloPremios {
             /*AQUI AGREGUE UN AUTOCOMMIT*/
             con.setAutoCommit(false);
             
-            System.out.println("UPDATE premios SET Id_premio ='"+vIdPrem+"', descripcion = '"+vDes+"', Puntos = '"+vPuntos+"', Stock = '"+vStock+"', Id_sucursal "+id_sucursal+" WHERE Id_premio = "+vIdPrem+";");
-            s.executeUpdate("UPDATE premios SET Id_premio ='"+vIdPrem+"', descripcion = '"+vDes+"', Puntos = '"+vPuntos+"', Stock = '"+vStock+"', Id_sucursal "+id_sucursal+" WHERE Id_premio = "+vIdPrem+";");
+            System.out.println("UPDATE premios SET Descripcion = '"+vDes+"', Puntos = '"+vPuntos+"', Stock = '"+vStock+"', Id_sucursal "+id_sucursal+" WHERE Id_premio = "+vIdPrem+";");
+            s.executeUpdate("UPDATE premios SET Descripcion ='"+vDes+"', Puntos = "+vPuntos+", Stock = "+vStock+", Id_sucursal="+id_sucursal+" where Id_premio="+vIdPrem+";");
             
             /*AQUI HAY UN COMMIT*/
             con.commit();
